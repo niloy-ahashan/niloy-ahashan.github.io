@@ -7,6 +7,8 @@ hide_title: true
 redirect_from:
   - /about/
   - /about.html
+  - /cv/
+  - /resume
 ---
 
 {% include base_path %}
@@ -150,8 +152,33 @@ redirect_from:
   </section>
 
   <section class="home-section">
-    <h2 class="teach-group__title"><span class="teach-group__icon"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span>Current Roles</h2>
-    <div class="home-roles">
+    <h2 class="teach-group__title"><span class="teach-group__icon"><i class="fa-solid fa-flask" aria-hidden="true"></i></span>Research Experience</h2>
+    <div class="home-roles home-roles--two">
+      <div class="home-role edu-reveal">
+        <span class="home-role__icon"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></span>
+        <div>
+          <h3>Graduate Research Assistant</h3>
+          <p>Department of Computer Science, University of Kentucky</p>
+          <p class="home-role__when"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>Fall 2024 &ndash; Summer 2025</p>
+          <p>Area of research: Federated Learning, Algorithm, Database, Networking</p>
+        </div>
+      </div>
+      <div class="home-role edu-reveal">
+        <span class="home-role__icon"><i class="fa-solid fa-lungs" aria-hidden="true"></i></span>
+        <div>
+          <h3>Undergraduate Thesis</h3>
+          <p>Department of Computer Science and Engineering, BRAC University</p>
+          <p class="home-role__when"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>May 2020 &ndash; June 2021</p>
+          <p><em>Comparative Study of X-ray and CT Scan Images for the Detection of COVID-19 using Deep Learning</em></p>
+          <p>Supervisor: Dr. Mohammad Zavid Parvez</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section">
+    <h2 class="teach-group__title"><span class="teach-group__icon"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span>Roles &amp; Service</h2>
+    <div class="home-roles home-roles--two">
       <div class="home-role edu-reveal">
         <span class="home-role__icon"><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i></span>
         <div>
@@ -163,7 +190,7 @@ redirect_from:
         <span class="home-role__icon"><i class="fa-solid fa-users" aria-hidden="true"></i></span>
         <div>
           <h3>GSC Representative</h3>
-          <p>Association for Data and Computation (ADC)</p>
+          <p>Association for Data and Computation (ADC), University of Kentucky</p>
         </div>
       </div>
       <div class="home-role edu-reveal">
@@ -173,36 +200,104 @@ redirect_from:
           <p>Bangladeshi Student Association at the University of Kentucky (BSAUK)</p>
         </div>
       </div>
+      <div class="home-role edu-reveal">
+        <span class="home-role__icon"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></span>
+        <div>
+          <h3>Journal Reviewer</h3>
+          <p>Frontiers in Signal Processing &ndash; Biomedical Signal Processing (Science and Technology)</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="home-section">
-    <h2 class="teach-group__title"><span class="teach-group__icon"><i class="fa-solid fa-compass" aria-hidden="true"></i></span>Explore</h2>
-    <div class="home-explore">
-      <a class="home-link edu-reveal" href="{{ base_path }}/education/">
-        <span class="home-link__icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>
-        <span class="home-link__title">Education</span>
-        <span class="home-link__sub">{{ site.education.size }} degrees</span>
-        <i class="fa-solid fa-arrow-right home-link__arrow" aria-hidden="true"></i>
-      </a>
-      <a class="home-link edu-reveal" href="{{ base_path }}/publications/">
-        <span class="home-link__icon"><i class="fa-solid fa-book-open" aria-hidden="true"></i></span>
-        <span class="home-link__title">Publications</span>
-        <span class="home-link__sub">{{ site.publications.size }} papers</span>
-        <i class="fa-solid fa-arrow-right home-link__arrow" aria-hidden="true"></i>
-      </a>
-      <a class="home-link edu-reveal" href="{{ base_path }}/teaching/">
-        <span class="home-link__icon"><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i></span>
-        <span class="home-link__title">Teaching</span>
-        <span class="home-link__sub">{{ site.teaching.size }} roles</span>
-        <i class="fa-solid fa-arrow-right home-link__arrow" aria-hidden="true"></i>
-      </a>
-      <a class="home-link edu-reveal" href="{{ base_path }}/cv/">
-        <span class="home-link__icon"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></span>
-        <span class="home-link__title">CV</span>
-        <span class="home-link__sub">Full CV &amp; PDF</span>
-        <i class="fa-solid fa-arrow-right home-link__arrow" aria-hidden="true"></i>
-      </a>
+    <h2 class="teach-group__title"><span class="teach-group__icon"><i class="fa-solid fa-trophy" aria-hidden="true"></i></span>Honors &amp; Awards</h2>
+    <ul class="home-awards">
+      <li class="edu-reveal"><i class="fa-solid fa-medal" aria-hidden="true"></i><span>Graduated with the Highest Distinction from BRAC University</span><span class="home-awards__year">2021</span></li>
+      <li class="edu-reveal"><i class="fa-solid fa-award" aria-hidden="true"></i><span>Performance-Based Scholarship (70%) at BRAC University for four consecutive years</span><span class="home-awards__year">2017&ndash;2021</span></li>
+      <li class="edu-reveal"><i class="fa-solid fa-star" aria-hidden="true"></i><span>Vice Chancellor's Honor List, 8 times, BRAC University</span></li>
+      <li class="edu-reveal"><i class="fa-solid fa-star" aria-hidden="true"></i><span>Dean's Honor List, 2 times, BRAC University</span></li>
+      <li class="edu-reveal"><i class="fa-solid fa-medal" aria-hidden="true"></i><span>Bronze Standard, The Duke of Edinburgh's International Award</span><span class="home-awards__year">2017</span></li>
+      <li class="edu-reveal"><i class="fa-solid fa-ranking-star" aria-hidden="true"></i><span>Secured 8th Position in Dinajpur Education Board in Higher Secondary Certificate and awarded the Talent Pool Scholarship</span><span class="home-awards__year">2016</span></li>
+      <li class="edu-reveal"><i class="fa-solid fa-award" aria-hidden="true"></i><span>Government Scholarship, Class 8</span></li>
+      <li class="edu-reveal"><i class="fa-solid fa-award" aria-hidden="true"></i><span>Government Scholarship, Class 5</span></li>
+    </ul>
+  </section>
+
+  <section class="home-section">
+    <h2 class="teach-group__title"><span class="teach-group__icon"><i class="fa-solid fa-code" aria-hidden="true"></i></span>Skills &amp; Languages</h2>
+    <div class="home-panel edu-reveal">
+      <div class="teach-courses home-skill">
+        <span class="teach-courses__label"><i class="fa-solid fa-terminal" aria-hidden="true"></i>Programming Languages</span>
+        <ul><li>Python</li><li>Java</li><li>SQL</li></ul>
+      </div>
+      <div class="teach-courses home-skill">
+        <span class="teach-courses__label"><i class="fa-brands fa-python" aria-hidden="true"></i>Python Libraries</span>
+        <ul><li>PyTorch</li><li>Pandas</li><li>NumPy</li><li>Scikit-learn</li><li>Matplotlib</li><li>TensorFlow</li><li>Keras</li></ul>
+      </div>
+      <div class="teach-courses home-skill">
+        <span class="teach-courses__label"><i class="fa-solid fa-globe" aria-hidden="true"></i>Web Programming</span>
+        <ul><li>MySQL</li><li>HTML5</li><li>CSS3</li><li>JavaScript</li></ul>
+      </div>
+      <div class="teach-courses home-skill">
+        <span class="teach-courses__label"><i class="fa-solid fa-pen-nib" aria-hidden="true"></i>Report Writing</span>
+        <ul><li>LaTeX</li></ul>
+      </div>
+      <div class="teach-courses home-skill">
+        <span class="teach-courses__label"><i class="fa-solid fa-language" aria-hidden="true"></i>Languages</span>
+        <ul><li>Bangla &middot; Fluent</li><li>English &middot; Fluent</li></ul>
+      </div>
+      <p class="home-panel__note">Fluent in speaking, writing, reading, and listening in both languages.</p>
+    </div>
+  </section>
+
+  <section class="home-section">
+    <h2 class="teach-group__title"><span class="teach-group__icon"><i class="fa-solid fa-compass" aria-hidden="true"></i></span>At a Glance</h2>
+    <div class="home-summary">
+
+      <div class="home-sum edu-reveal">
+        <div class="home-sum__head">
+          <span class="home-link__icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>
+          <h3>Education</h3>
+        </div>
+        <ul>
+          {% assign degrees = site.education | sort: "date" | reverse %}
+          {% for d in degrees %}
+          <li><strong>{{ d.title }}</strong><span>{{ d.school }}{% if d.gpa %}, GPA {{ d.gpa }}{% endif %} &middot; {{ d.period }}</span></li>
+          {% endfor %}
+        </ul>
+        <a class="home-sum__more" href="{{ base_path }}/education/">View education <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+
+      <div class="home-sum edu-reveal">
+        <div class="home-sum__head">
+          <span class="home-link__icon"><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i></span>
+          <h3>Teaching</h3>
+        </div>
+        <ul>
+          {% assign roles = site.teaching | sort: "date" | reverse %}
+          {% for r in roles %}
+          <li><strong>{{ r.title }}</strong><span>{{ r.institution }} &middot; {{ r.period }}</span></li>
+          {% endfor %}
+        </ul>
+        <p class="home-sum__note">Course codes taught across both lecturer roles at BRAC University: CSE110, CSE220, CSE260, CSE360, CSE370, CSE461</p>
+        <a class="home-sum__more" href="{{ base_path }}/teaching/">View teaching <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+
+      <div class="home-sum edu-reveal">
+        <div class="home-sum__head">
+          <span class="home-link__icon"><i class="fa-solid fa-book-open" aria-hidden="true"></i></span>
+          <h3>Publications</h3>
+        </div>
+        <ul>
+          {% assign papers = site.publications | sort: "date" | reverse %}
+          {% for p in papers %}
+          <li><strong><a href="{{ base_path }}{{ p.url }}">{{ p.title }}</a></strong><span>{{ p.venue_short | default: p.venue }} &middot; {{ p.date | date: "%Y" }}</span></li>
+          {% endfor %}
+        </ul>
+        <a class="home-sum__more" href="{{ base_path }}/publications/">View publications <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+
     </div>
   </section>
 
