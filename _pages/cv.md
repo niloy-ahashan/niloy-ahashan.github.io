@@ -32,7 +32,7 @@ Work Experience
   * Department of Computer Science and Engineering, BRAC University
   * Courses Conducted: Programming Language I, Data Structures, Digital Logic Design, Database Systems
 
-* October 2021 - December 2022: Part Time Lecturer
+* October 2021 - December 2022: Adjunct Lecturer
   * Department of Computer Science and Engineering, BRAC University
   * Courses Conducted: Digital Logic Design, Database Systems, Computer Interfacing, Introduction to Robotics
   * Course codes taught across both lecturer roles at BRAC University: CSE110, CSE220, CSE260, CSE360, CSE370, CSE461

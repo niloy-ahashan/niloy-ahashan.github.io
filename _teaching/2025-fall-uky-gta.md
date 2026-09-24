@@ -15,6 +15,7 @@ dept_url: 'https://cs.engr.uky.edu/'
 logo: uky.svg
 photo: uky.jpg
 photo_position: '50% 80%'
+courses: ['Introduction to Computer Programming']
 ---
 
 Graduate Teaching Assistant in the Department of Computer Science at the University of Kentucky, Fall 2025 - Present.

@@ -9,8 +9,8 @@
   <div class="edu-card__body">
     {% if role.current %}
     <span class="edu-badge edu-badge--current"><span class="edu-badge__dot"></span>Current</span>
-    {% else %}
-    <span class="edu-badge edu-badge--done"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Completed</span>
+    {% elsif role.status %}
+    <span class="edu-badge teach-badge--leave"><i class="fa-solid fa-plane-departure" aria-hidden="true"></i>{{ role.status }}</span>
     {% endif %}
     <h3 class="edu-card__degree">{{ role.title }}</h3>
     <span class="edu-card__school">{{ role.institution }}</span>

@@ -76,7 +76,6 @@ hide_title: true
     <h2 class="teach-group__title">
       <span class="teach-group__icon"><i class="fa-solid fa-user-graduate" aria-hidden="true"></i></span>
       Teaching Assistant
-      <span class="teach-group__count">{{ tas.size }} {% if tas.size == 1 %}role{% else %}roles{% endif %}</span>
     </h2>
     <div class="edu-list">
       {% for role in tas %}{% include teaching-card.html %}{% endfor %}
@@ -87,7 +86,6 @@ hide_title: true
     <h2 class="teach-group__title">
       <span class="teach-group__icon"><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i></span>
       Lecturer
-      <span class="teach-group__count">{{ lecturers.size }} {% if lecturers.size == 1 %}role{% else %}roles{% endif %}</span>
     </h2>
     <div class="edu-list">
       {% for role in lecturers %}{% include teaching-card.html %}{% endfor %}

@@ -550,13 +550,9 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   box-shadow: 0 6px 14px -8px rgba($edu-accent-deep, 0.7);
 }
 
-.teach-group__count {
-  padding: 0.15em 0.6em;
-  border-radius: 999px;
-  background: #eef3fd;
-  font-size: 0.62em;
-  font-weight: 600;
-  color: $edu-accent;
+.teach-badge--leave {
+  background: #fff4e0;
+  color: #a15c00;
 }
 
 .teach-courses {
@@ -598,10 +594,8 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   display: inline-flex;
   align-items: center;
   gap: 0.4em;
-  font-size: 0.72em;
+  font-size: 0.78em;
   font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
   color: $edu-muted;
 
   i { color: $edu-accent; }

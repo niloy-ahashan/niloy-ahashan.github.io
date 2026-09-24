@@ -8,7 +8,7 @@ date: 2023-01-01
 location: "Dhaka, Bangladesh"
 role_group: lecturer
 period: 'Jan 2023 – Present'
-current: true
+status: 'On Study Leave'
 institution: 'BRAC University'
 department: 'Department of Computer Science and Engineering'
 dept_url: 'https://cse.bracu.ac.bd/'
