@@ -1,0 +1,35 @@
+{% comment %} One Teaching page card. Expects `role` (a _teaching document) and `base_path`. {% endcomment %}
+<article class="edu-card edu-reveal">
+  {% if role.dept_url %}
+  <a class="edu-card__go" href="{{ role.dept_url }}" aria-label="{{ role.department }}, {{ role.institution }}"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+  {% endif %}
+  <div class="edu-card__logo">
+    <img src="{{ base_path }}/images/logos/{{ role.logo }}" alt="{{ role.institution }} logo" width="80" height="80">
+  </div>
+  <div class="edu-card__body">
+    {% if role.current %}
+    <span class="edu-badge edu-badge--current"><span class="edu-badge__dot"></span>Current</span>
+    {% else %}
+    <span class="edu-badge edu-badge--done"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Completed</span>
+    {% endif %}
+    <h3 class="edu-card__degree">{{ role.title }}</h3>
+    <span class="edu-card__school">{{ role.institution }}</span>
+    <ul class="edu-meta">
+      <li><i class="fa-solid fa-building-columns" aria-hidden="true"></i>{{ role.department }}</li>
+      <li><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>{{ role.period }}</li>
+      <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{{ role.location }}</li>
+    </ul>
+    {% if role.courses %}
+    <div class="teach-courses">
+      <span class="teach-courses__label"><i class="fa-solid fa-book" aria-hidden="true"></i>{% if role.role_group == "ta" %}Assisted{% else %}Taught{% endif %}</span>
+      <ul>
+        {% for course in role.courses %}<li>{{ course }}</li>{% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+  <img class="edu-card__mark" src="{{ base_path }}/images/logos/{{ role.logo }}" alt="" aria-hidden="true">
+  {% if role.photo %}
+  <div class="edu-card__photo" aria-hidden="true"><img src="{{ base_path }}/images/campus/{{ role.photo }}" alt="" loading="lazy"{% if role.photo_position %} style="object-position: {{ role.photo_position }}"{% endif %}></div>
+  {% endif %}
+</article>

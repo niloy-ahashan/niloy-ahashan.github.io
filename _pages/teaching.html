@@ -3,10 +3,97 @@ layout: archive
 title: "Teaching"
 permalink: /teaching/
 author_profile: true
+hide_title: true
 ---
 
 {% include base_path %}
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+{% assign tas = site.teaching | where: "role_group", "ta" | sort: "date" | reverse %}
+{% assign lecturers = site.teaching | where: "role_group", "lecturer" | sort: "date" | reverse %}
+
+<div class="edu">
+
+  <section class="edu-hero">
+    <div class="edu-hero__text">
+      <h1 class="edu-hero__subtitle">Teaching Experience</h1>
+      <p class="edu-hero__intro">Courses I have taught and assisted in computer science, from undergraduate teaching assistant and lecturer at BRAC University to graduate teaching assistant at the University of Kentucky.</p>
+    </div>
+
+    <div class="edu-hero__art" aria-hidden="true">
+      <svg class="edu-hero__svg" viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" focusable="false">
+        <defs>
+          <radialGradient id="teach-halo" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#dbe7ff"/>
+            <stop offset="100%" stop-color="#dbe7ff" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <circle cx="160" cy="125" r="112" fill="url(#teach-halo)"/>
+
+        <ellipse cx="160" cy="168" rx="140" ry="30" fill="none" stroke="#9dbcf5" stroke-width="1.5" stroke-dasharray="3 7"/>
+        <circle r="4.5" fill="#4f7fe8">
+          <animateMotion dur="9s" repeatCount="indefinite" path="M20,168 a140,30 0 1,0 280,0 a140,30 0 1,0 -280,0"/>
+        </circle>
+
+        <g class="edu-float">
+          <!-- easel legs -->
+          <path d="M112 176l-14 42M208 176l14 42M160 176v40" stroke="#8a5a2b" stroke-width="6" stroke-linecap="round"/>
+          <!-- board -->
+          <rect x="70" y="50" width="180" height="128" rx="8" fill="#b7813f"/>
+          <rect x="78" y="58" width="164" height="112" rx="4" fill="#153a8a"/>
+          <!-- chalk: a small binary tree -->
+          <g stroke="#e8f0ff" stroke-width="2" fill="none" stroke-linecap="round">
+            <path d="M160 84l-30 26M160 84l30 26M130 110l-16 24M130 110l14 24M190 110l16 24"/>
+          </g>
+          <g fill="#153a8a" stroke="#e8f0ff" stroke-width="2.2">
+            <circle cx="160" cy="84" r="9"/>
+            <circle cx="130" cy="110" r="9"/>
+            <circle cx="190" cy="110" r="9"/>
+            <circle cx="114" cy="136" r="8"/>
+            <circle cx="144" cy="136" r="8"/>
+            <circle cx="206" cy="136" r="8"/>
+          </g>
+          <circle cx="160" cy="84" r="4" fill="#f2b632"/>
+          <path d="M96 156h40M180 156h44" stroke="#9dbcf5" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 5"/>
+          <!-- chalk tray and chalk -->
+          <rect x="74" y="170" width="172" height="7" rx="3" fill="#8a5a2b"/>
+          <rect x="196" y="165" width="18" height="5" rx="2.5" fill="#ffffff"/>
+          <rect x="218" y="165" width="12" height="5" rx="2.5" fill="#f2b632"/>
+        </g>
+
+        <g fill="#f2b632">
+          <path class="edu-spark" d="M50 70l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
+          <path class="edu-spark edu-spark--2" d="M274 50l2.2 6 6 2.2-6 2.2-2.2 6-2.2-6-6-2.2 6-2.2z"/>
+          <path class="edu-spark edu-spark--3" d="M280 176l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/>
+        </g>
+        <circle class="edu-bubble" cx="40" cy="140" r="7" fill="#c9daf9"/>
+        <circle class="edu-bubble edu-bubble--2" cx="290" cy="112" r="9" fill="#d7e4fb"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="teach-group">
+    <h2 class="teach-group__title">
+      <span class="teach-group__icon"><i class="fa-solid fa-user-graduate" aria-hidden="true"></i></span>
+      Teaching Assistant
+      <span class="teach-group__count">{{ tas.size }} {% if tas.size == 1 %}role{% else %}roles{% endif %}</span>
+    </h2>
+    <div class="edu-list">
+      {% for role in tas %}{% include teaching-card.html %}{% endfor %}
+    </div>
+  </section>
+
+  <section class="teach-group">
+    <h2 class="teach-group__title">
+      <span class="teach-group__icon"><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i></span>
+      Lecturer
+      <span class="teach-group__count">{{ lecturers.size }} {% if lecturers.size == 1 %}role{% else %}roles{% endif %}</span>
+    </h2>
+    <div class="edu-list">
+      {% for role in lecturers %}{% include teaching-card.html %}{% endfor %}
+    </div>
+  </section>
+
+</div>
+
+<script src="{{ base_path }}/assets/js/cards.js?v={{ site.time | date: '%s' }}" defer></script>
