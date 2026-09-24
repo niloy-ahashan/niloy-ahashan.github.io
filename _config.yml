@@ -22,7 +22,7 @@ repository               : "niloy-ahashan/niloy-ahashan.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "images/niloy.png"
+  avatar           : "niloy.png"
   name             : "Ahashan Habib Niloy"
   pronouns         : "He/Him"
   bio              : "PhD student in Computer Science, University of Kentucky. Researching communication-efficient federated learning."
