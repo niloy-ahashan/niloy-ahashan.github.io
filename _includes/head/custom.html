@@ -2,6 +2,10 @@
 
 <!-- start custom head snippets -->
 
+<!-- apply the saved (or system) light/dark theme before the page paints -->
+<script>try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"){t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}</script>
+<meta name="color-scheme" content="light dark">
+
 <!-- play the name animation in the header once per browser session -->
 <script>try{if(sessionStorage.getItem("brandSeen")){document.documentElement.classList.add("brand-seen");}else{sessionStorage.setItem("brandSeen","1");}}catch(e){}</script>
 
@@ -11,7 +15,8 @@
 <link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-192x192.png" sizes="192x192"/>
 <link rel="manifest" href="{{ base_path }}/images/manifest.json"/>
 <link rel="icon" href="/images/favicon.ico"/>
-<meta name="theme-color" content="#ffffff"/>
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"/>
+<meta name="theme-color" content="#0c1322" media="(prefers-color-scheme: dark)"/>
 <link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
