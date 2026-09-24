@@ -11,7 +11,7 @@ I am a PhD student in the Department of Computer Science at the University of Ke
 
 Before starting my PhD, I was a Lecturer (and previously Part-Time and Undergraduate Teaching Assistant) in the Department of Computer Science and Engineering at BRAC University in Dhaka, Bangladesh, where I taught courses including Programming Language I, Data Structures, Digital Logic Design, and Database Systems. I completed my B.Sc. in Computer Science and Engineering at BRAC University in 2021, graduating with the highest distinction.
 
-My research interests span machine learning, deep learning, biomedical image processing, human-computer interaction, and cybersecurity. My undergraduate thesis and subsequent publications focused on deep learning approaches for COVID-19 detection from chest X-ray and CT scan imaging.
+My research interests span machine learning, deep learning, biomedical image processing, human-computer interaction, cybersecurity, and software engineering. My undergraduate thesis and subsequent publications focused on deep learning approaches for COVID-19 detection from chest X-ray and CT scan imaging.
 
 Outside of research and teaching, I enjoy playing and watching football, and I support FC Barcelona.
 

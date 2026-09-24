@@ -61,6 +61,7 @@ Research Interests
 * Biomedical Image Processing
 * Human-Computer Interaction
 * Cybersecurity
+* Software Engineering
 
 Technical Skills
 ======
