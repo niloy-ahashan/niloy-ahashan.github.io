@@ -379,6 +379,141 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   }
 }
 
+/* Publications page extras
+   ========================================================================== */
+
+.pub-scholar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 0.7em;
+  padding: 0.35em 0.9em;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 6px 16px -10px rgba($edu-accent-deep, 0.5);
+  font-size: 0.78em;
+  font-weight: 600;
+  color: $edu-accent;
+  animation: edu-rise 0.8s 0.2s $edu-ease both;
+  transition: transform 0.3s $edu-ease, box-shadow 0.3s ease;
+
+  &:hover {
+    color: $edu-accent;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -10px rgba($edu-accent-deep, 0.55);
+  }
+}
+
+.pub-badge--journal {
+  background: #e8effd;
+  color: $edu-accent;
+}
+
+.pub-badge--conference {
+  background: #f1eafd;
+  color: #6b3fb8;
+}
+
+.pub-title {
+  font-size: 1em;
+  line-height: 1.3;
+
+  @include breakpoint($medium) {
+    font-size: 1.05em;
+  }
+
+  a {
+    color: $edu-ink;
+    background: linear-gradient($edu-accent, $edu-accent) left bottom / 0 1px no-repeat;
+    transition: background-size 0.4s $edu-ease, color 0.3s ease;
+
+    &:hover {
+      color: $edu-accent-deep;
+      background-size: 100% 1px;
+    }
+  }
+}
+
+.pub-venue {
+  font-size: 0.82em;
+  background: none;
+}
+
+.edu-meta .pub-authors {
+  flex: 1 1 100%;
+  align-items: flex-start;
+
+  i { margin-top: 0.2em; }
+
+  strong {
+    color: $edu-ink;
+    font-weight: 700;
+  }
+}
+
+.pub-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin-top: 0.6em;
+}
+
+.pub-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  padding: 0.35em 0.85em;
+  border: 1px solid $edu-line;
+  border-radius: 999px;
+  background: #fff;
+  font: inherit;
+  font-size: 0.72em;
+  font-weight: 600;
+  color: $edu-accent-deep;
+  cursor: pointer;
+  transition: transform 0.25s $edu-ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+
+  &:hover {
+    color: $edu-accent-deep;
+    border-color: #bcd0f5;
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $edu-accent;
+    outline-offset: 2px;
+  }
+
+  &--primary {
+    border-color: $edu-accent;
+    background: $edu-accent;
+    color: #fff;
+
+    &:hover {
+      color: #fff;
+      background: $edu-accent-deep;
+      border-color: $edu-accent-deep;
+    }
+  }
+
+  &__done { display: none; }
+
+  &.is-copied {
+    border-color: #9ad8ae;
+    background: #e7f7ec;
+    color: #157a3b;
+
+    .pub-btn__label { display: none; }
+    .pub-btn__done { display: inline; }
+  }
+}
+
+.pub-logo-fallback {
+  font-size: 2.4em;
+  color: #9dbcf5;
+}
+
 /* Keyframes
    ========================================================================== */
 

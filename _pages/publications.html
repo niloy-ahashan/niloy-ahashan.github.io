@@ -3,34 +3,114 @@ layout: archive
 title: "Publications"
 permalink: /publications/
 author_profile: true
+hide_title: true
 ---
-
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
 
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
+<div class="edu">
+
+  <section class="edu-hero">
+    <div class="edu-hero__text">
+      <h1 class="edu-hero__subtitle">Research &amp; Publications</h1>
+      <p class="edu-hero__intro">Peer-reviewed papers from my research, including deep learning methods for detecting COVID-19 from chest X-ray and CT images.</p>
+      {% if site.author.googlescholar %}
+        <a class="pub-scholar" href="{{ site.author.googlescholar }}"><i class="ai ai-google-scholar" aria-hidden="true"></i>Google Scholar profile</a>
       {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
+    </div>
+
+    <div class="edu-hero__art" aria-hidden="true">
+      <svg class="edu-hero__svg" viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" focusable="false">
+        <defs>
+          <radialGradient id="pub-halo" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#dbe7ff"/>
+            <stop offset="100%" stop-color="#dbe7ff" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <circle cx="160" cy="125" r="112" fill="url(#pub-halo)"/>
+
+        <ellipse cx="160" cy="160" rx="140" ry="32" fill="none" stroke="#9dbcf5" stroke-width="1.5" stroke-dasharray="3 7"/>
+        <circle r="4.5" fill="#4f7fe8">
+          <animateMotion dur="9s" repeatCount="indefinite" path="M20,160 a140,32 0 1,0 280,0 a140,32 0 1,0 -280,0"/>
+        </circle>
+
+        <g class="edu-float">
+          <rect x="120" y="34" width="118" height="150" rx="8" fill="#d6e2fb" transform="rotate(8 179 109)"/>
+          <rect x="92" y="44" width="124" height="158" rx="8" fill="#ffffff" stroke="#c9d7f3" stroke-width="2"/>
+          <rect x="106" y="60" width="72" height="8" rx="4" fill="#1f4fbf"/>
+          <rect x="106" y="76" width="96" height="5" rx="2.5" fill="#d5deec"/>
+          <rect x="106" y="87" width="88" height="5" rx="2.5" fill="#d5deec"/>
+          <rect x="106" y="98" width="92" height="5" rx="2.5" fill="#d5deec"/>
+          <rect x="112" y="150" width="12" height="30" rx="2" fill="#9dbcf5"/>
+          <rect x="130" y="136" width="12" height="44" rx="2" fill="#4f7fe8"/>
+          <rect x="148" y="124" width="12" height="56" rx="2" fill="#1f4fbf"/>
+          <rect x="166" y="142" width="12" height="38" rx="2" fill="#6d9bff"/>
+          <path d="M106 181h86" stroke="#c9d7f3" stroke-width="2"/>
+
+          <circle cx="222" cy="150" r="24" fill="#ffffff" fill-opacity="0.65" stroke="#0f2a6b" stroke-width="7"/>
+          <path d="M239 167l20 20" stroke="#0f2a6b" stroke-width="10" stroke-linecap="round"/>
+          <path d="M239 167l20 20" stroke="#f2b632" stroke-width="3" stroke-linecap="round"/>
+        </g>
+
+        <g fill="#f2b632">
+          <path class="edu-spark" d="M60 72l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
+          <path class="edu-spark edu-spark--2" d="M268 58l2.2 6 6 2.2-6 2.2-2.2 6-2.2-6-6-2.2 6-2.2z"/>
+          <path class="edu-spark edu-spark--3" d="M60 176l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/>
+        </g>
+        <circle class="edu-bubble" cx="46" cy="128" r="7" fill="#c9daf9"/>
+        <circle class="edu-bubble edu-bubble--2" cx="286" cy="112" r="9" fill="#d7e4fb"/>
+      </svg>
+    </div>
+  </section>
+
+  <div class="edu-list">
+    {% assign pubs = site.publications | sort: "date" | reverse %}
+    {% for post in pubs %}
+      {% case post.category %}
+        {% when "manuscripts" %}{% assign pub_type = "Journal Article" %}{% assign pub_mod = "journal" %}{% assign pub_icon = "fa-book-open" %}
+        {% when "conferences" %}{% assign pub_type = "Conference Paper" %}{% assign pub_mod = "conference" %}{% assign pub_icon = "fa-users" %}
+        {% when "books" %}{% assign pub_type = "Book" %}{% assign pub_mod = "journal" %}{% assign pub_icon = "fa-book" %}
+        {% else %}{% assign pub_type = "Publication" %}{% assign pub_mod = "journal" %}{% assign pub_icon = "fa-file-lines" %}
+      {% endcase %}
+      {% assign cite_text = post.citation | strip_html %}
+
+    <article class="edu-card edu-reveal">
+      {% if post.paperurl %}
+      <a class="edu-card__go" href="{{ post.paperurl }}" aria-label="Read {{ post.title | escape }}"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+      {% endif %}
+      <div class="edu-card__logo">
+        {% if post.publisher_logo %}
+        <img src="{{ base_path }}/images/logos/{{ post.publisher_logo }}" alt="" width="80" height="80">
+        {% else %}
+        <i class="fa-solid fa-file-lines pub-logo-fallback" aria-hidden="true"></i>
+        {% endif %}
+      </div>
+      <div class="edu-card__body">
+        <span class="edu-badge pub-badge--{{ pub_mod }}"><i class="fa-solid {{ pub_icon }}" aria-hidden="true"></i>{{ pub_type }}</span>
+        <h2 class="edu-card__degree pub-title"><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></h2>
+        <span class="edu-card__school pub-venue">{{ post.venue_short | default: post.venue }}</span>
+        <ul class="edu-meta">
+          <li><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>{{ post.date | date: "%B %Y" }}</li>
+          {% if post.authors %}
+          <li class="pub-authors"><i class="fa-solid fa-user-group" aria-hidden="true"></i><span>{{ post.authors | replace: "Niloy, A.H.", "<strong>Niloy, A.H.</strong>" }}</span></li>
+          {% endif %}
+        </ul>
+        <div class="pub-actions">
+          {% if post.paperurl %}
+          <a class="pub-btn pub-btn--primary" href="{{ post.paperurl }}"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>Read paper</a>
+          {% endif %}
+          {% if post.citation %}
+          <button type="button" class="pub-btn" data-cite="{{ cite_text }}"><i class="fa-solid fa-quote-left" aria-hidden="true"></i><span class="pub-btn__label">Cite</span><span class="pub-btn__done">Copied!</span></button>
+          {% endif %}
+        </div>
+      </div>
+      {% if post.publisher_logo %}
+      <img class="edu-card__mark" src="{{ base_path }}/images/logos/{{ post.publisher_logo }}" alt="" aria-hidden="true">
+      {% endif %}
+    </article>
     {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+  </div>
+</div>
 
-
-
+<script src="{{ base_path }}/assets/js/cards.js?v={{ site.time | date: '%s' }}" defer></script>

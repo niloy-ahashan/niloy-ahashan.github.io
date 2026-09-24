@@ -1,7 +1,23 @@
-/* Education page: reveal cards as they scroll into view. */
+/* Card pages (Education, Publications): reveal cards as they scroll into
+   view, and copy a publication's citation when its Cite button is clicked. */
 (function () {
   var root = document.querySelector('.edu');
   if (!root) return;
+
+  Array.prototype.forEach.call(root.querySelectorAll('[data-cite]'), function (btn) {
+    btn.addEventListener('click', function () {
+      var text = btn.getAttribute('data-cite');
+      var done = function () {
+        btn.classList.add('is-copied');
+        window.setTimeout(function () { btn.classList.remove('is-copied'); }, 1800);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () { window.prompt('Copy citation:', text); });
+      } else {
+        window.prompt('Copy citation:', text);
+      }
+    });
+  });
 
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduceMotion) {
