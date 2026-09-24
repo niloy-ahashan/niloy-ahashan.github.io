@@ -12,9 +12,7 @@ hide_title: true
 
   <section class="edu-hero">
     <div class="edu-hero__text">
-      <p class="edu-hero__eyebrow">Education</p>
-      <h1 class="edu-hero__title">Education</h1>
-      <p class="edu-hero__subtitle">My Academic Journey</p>
+      <h1 class="edu-hero__subtitle">My Academic Journey</h1>
       <p class="edu-hero__intro">The degrees that shaped my path in computer science, from an undergraduate foundation at BRAC University to doctoral research at the University of Kentucky.</p>
     </div>
 
@@ -75,47 +73,43 @@ hide_title: true
   <div class="edu-list">
 
     <article class="edu-card edu-reveal">
-      <div class="edu-card__photo" aria-hidden="true">
-        <img src="{{ base_path }}/images/campus/uky-main-building.jpg" alt="" loading="lazy" width="760" height="442">
-      </div>
-      <span class="edu-badge edu-badge--current"><span class="edu-badge__dot"></span>Current</span>
+      <a class="edu-card__go" href="https://cs.engr.uky.edu/" aria-label="University of Kentucky Department of Computer Science"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
       <div class="edu-card__logo">
         <img src="{{ base_path }}/images/logos/uky.svg" alt="University of Kentucky logo" width="140" height="115">
       </div>
       <div class="edu-card__body">
-        <h2 class="edu-card__degree">Ph.D. in Computer Science</h2>
-        <a class="edu-card__school" href="https://www.uky.edu/">University of Kentucky<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+        <span class="edu-badge edu-badge--current"><span class="edu-badge__dot"></span>Current</span>
+        <h2 class="edu-card__degree">PhD in Computer Science</h2>
+        <a class="edu-card__school" href="https://www.uky.edu/">University of Kentucky</a>
         <ul class="edu-meta">
-          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Lexington, KY, USA</li>
           <li><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>Fall 2024 &ndash; Present</li>
+          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Lexington, Kentucky, USA</li>
         </ul>
         <p class="edu-card__desc">Doctoral studies in the Department of Computer Science, with research focused on federated learning.</p>
       </div>
+      <img class="edu-card__mark" src="{{ base_path }}/images/logos/uky.svg" alt="" aria-hidden="true">
     </article>
 
     <article class="edu-card edu-reveal">
-      <div class="edu-card__photo" aria-hidden="true">
-        <img src="{{ base_path }}/images/campus/bracu-mohakhali.jpg" alt="" loading="lazy" width="760" height="451">
-      </div>
-      <span class="edu-badge edu-badge--done"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>Graduated</span>
+      <a class="edu-card__go" href="https://cse.bracu.ac.bd/" aria-label="BRAC University Department of Computer Science and Engineering"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
       <div class="edu-card__logo">
-        <img src="{{ base_path }}/images/logos/bracu.svg" alt="BRAC University logo" width="130" height="125">
+        <img src="{{ base_path }}/images/logos/bracu.svg" alt="BRAC University logo" width="130" height="110">
       </div>
       <div class="edu-card__body">
+        <span class="edu-badge edu-badge--done"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>Graduated</span>
         <h2 class="edu-card__degree">B.Sc. in Computer Science and Engineering</h2>
-        <a class="edu-card__school" href="https://www.bracu.ac.bd/">BRAC University<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+        <a class="edu-card__school" href="https://www.bracu.ac.bd/">BRAC University</a>
         <ul class="edu-meta">
-          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Dhaka, Bangladesh</li>
           <li><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>June 2021</li>
+          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Dhaka, Bangladesh</li>
           <li><i class="fa-solid fa-award" aria-hidden="true"></i>GPA 3.90/4.00</li>
         </ul>
         <p class="edu-card__desc">Undergraduate studies in the Department of Computer Science and Engineering, where I built my foundation in computing and later returned to teach as a lecturer.</p>
       </div>
+      <img class="edu-card__mark" src="{{ base_path }}/images/logos/bracu.svg" alt="" aria-hidden="true">
     </article>
 
   </div>
-
-  <p class="edu-credits">Campus photos via Wikimedia Commons: <a href="https://commons.wikimedia.org/wiki/File:Main_Building_-_University_of_Kentucky_-_DSC09119.JPG">University of Kentucky Main Building</a> by Daderot (CC0); <a href="https://commons.wikimedia.org/wiki/File:BRAC_University.jpg">BRAC University</a> by মোহাম্মদ জনি হোসেন (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>), cropped and tinted.</p>
 </div>
 
 <script src="{{ base_path }}/assets/js/education.js" defer></script>
