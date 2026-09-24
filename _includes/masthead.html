@@ -6,7 +6,10 @@
       <nav id="site-nav" class="greedy-nav">
         <button><div class="navicon"></div></button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}/">{{ site.title }}</a></li>
+          <li class="masthead__menu-item masthead__menu-item--lg"><a class="brand" href="{{ base_path }}/" aria-label="{{ site.title }}, home">
+            <span class="brand__mark" aria-hidden="true">AHN</span>
+            <span class="brand__name" aria-hidden="true">{% assign brand_words = site.title | split: " " %}{% assign brand_i = 0 %}{% for word in brand_words %}<span class="brand__word">{% assign brand_chars = word | split: "" %}{% for ch in brand_chars %}<span class="brand__char" style="--i: {{ brand_i }}">{{ ch }}</span>{% assign brand_i = brand_i | plus: 1 %}{% endfor %}</span>{% unless forloop.last %} {% endunless %}{% endfor %}</span>
+          </a></li>
           {% for link in site.data.navigation.main %}
             {% if link.url contains 'http' %}
               {% assign domain = '' %}

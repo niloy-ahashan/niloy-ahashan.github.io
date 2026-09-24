@@ -2,6 +2,9 @@
 
 <!-- start custom head snippets -->
 
+<!-- play the name animation in the header once per browser session -->
+<script>try{if(sessionStorage.getItem("brandSeen")){document.documentElement.classList.add("brand-seen");}else{sessionStorage.setItem("brandSeen","1");}}catch(e){}</script>
+
 <!-- favicon -->
 <link rel="apple-touch-icon" sizes="180x180" href="{{ base_path }}/images/apple-touch-icon-180x180.png"/>
 <link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-32x32.png" sizes="32x32"/>
