@@ -1,0 +1,433 @@
+/* ==========================================================================
+   EDUCATION PAGE
+   ========================================================================== */
+
+$edu-accent       : #1f4fbf;
+$edu-accent-deep  : #0f2a6b;
+$edu-ink          : #111827;
+$edu-muted        : #5b6474;
+$edu-line         : #e4eaf4;
+$edu-card-bg      : #ffffff;
+$edu-green        : #16a34a;
+$edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
+
+.edu {
+  position: relative;
+  color: $edu-muted;
+
+  a,
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+/* Hero
+   ========================================================================== */
+
+.edu-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 2em;
+  padding: 1.5em 1.25em 1em;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 85% 30%, rgba(#bcd2fb, 0.55), transparent 55%),
+    linear-gradient(135deg, #f5f8ff 0%, #eef3fd 100%);
+  overflow: hidden;
+
+  @include breakpoint($medium) {
+    grid-template-columns: 1.15fr 1fr;
+    padding: 2.25em 2em 1.75em;
+  }
+}
+
+.edu-hero__text > * {
+  animation: edu-rise 0.8s $edu-ease both;
+}
+
+.edu-hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.9em;
+  margin: 0 0 0.6em;
+  font-size: $type-size-7;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: $edu-accent;
+
+  &::after {
+    content: "";
+    width: 3em;
+    height: 2px;
+    border-radius: 2px;
+    background: $edu-accent;
+    transform-origin: left;
+    animation: edu-grow 0.9s 0.4s $edu-ease both;
+  }
+}
+
+.edu-hero__title {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.6em;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: $edu-ink;
+  animation-delay: 0.08s;
+
+  @include breakpoint($medium) {
+    font-size: 3.2em;
+  }
+}
+
+.edu-hero__subtitle {
+  margin: 0.35em 0 0.9em;
+  font-size: $type-size-4;
+  font-weight: 600;
+  color: $edu-accent-deep;
+  animation-delay: 0.16s;
+}
+
+.edu-hero__intro {
+  margin: 0;
+  max-width: 34em;
+  font-size: $type-size-5;
+  line-height: 1.65;
+  animation-delay: 0.24s;
+}
+
+.edu-hero__art {
+  justify-self: center;
+  width: 100%;
+  max-width: 230px;
+  animation: edu-fade 1s 0.2s ease both;
+
+  @include breakpoint($medium) {
+    max-width: 320px;
+  }
+}
+
+.edu-hero__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.edu-float {
+  animation: edu-float 5.5s ease-in-out infinite;
+}
+
+.edu-tassel {
+  transform-box: view-box;
+  transform-origin: 226px 96px;
+  animation: edu-sway 3.5s ease-in-out infinite;
+}
+
+.edu-spark {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: edu-twinkle 2.6s ease-in-out infinite;
+
+  &--2 { animation-delay: 0.9s; }
+  &--3 { animation-delay: 1.7s; }
+}
+
+.edu-bubble {
+  animation: edu-float 7s ease-in-out infinite;
+
+  &--2 { animation-duration: 8.5s; animation-delay: 1.2s; }
+}
+
+/* Cards
+   ========================================================================== */
+
+.edu-list {
+  display: grid;
+  gap: 1.5em;
+}
+
+.edu-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.1em;
+  padding: 1.5em 1.25em 1.4em;
+  border: 1px solid $edu-line;
+  border-radius: 18px;
+  background: $edu-card-bg;
+  box-shadow: 0 10px 30px -18px rgba($edu-accent-deep, 0.35);
+  overflow: hidden;
+  transition: transform 0.45s $edu-ease, box-shadow 0.45s $edu-ease, border-color 0.45s $edu-ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, $edu-accent, #6d9bff, rgba(#6d9bff, 0));
+    transform: scaleX(0.35);
+    transform-origin: left;
+    transition: transform 0.6s $edu-ease;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: #cddcf6;
+    box-shadow: 0 22px 44px -22px rgba($edu-accent-deep, 0.45);
+
+    &::before { transform: scaleX(1); }
+    .edu-card__logo img { transform: scale(1.06) rotate(-2deg); }
+    .edu-card__mark { opacity: 0.075; transform: translateY(-50%) scale(1.04); }
+    .edu-card__go { background: $edu-accent; color: #fff; }
+    .edu-card__go i { transform: translateX(2px); }
+  }
+
+  @include breakpoint($medium) {
+    grid-template-columns: 170px 1fr;
+    gap: 0;
+    padding: 1.75em 1.75em 1.6em 0;
+  }
+}
+
+.edu-card__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25em 0 0.75em;
+
+  img {
+    display: block;
+    width: auto;
+    max-width: 120px;
+    max-height: 100px;
+    transition: transform 0.6s $edu-ease;
+  }
+
+  @include breakpoint($medium) {
+    padding: 0 1.25em;
+    border-right: 1px solid $edu-line;
+
+    img {
+      max-width: 130px;
+      max-height: 110px;
+    }
+  }
+}
+
+.edu-card__body {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+
+  @include breakpoint($medium) {
+    padding-left: 1.75em;
+    padding-right: 2.5em;
+  }
+}
+
+.edu-card__mark {
+  position: absolute;
+  top: 50%;
+  right: -1.5em;
+  width: 220px;
+  opacity: 0.045;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.6s $edu-ease;
+  filter: grayscale(1);
+}
+
+.edu-card__go {
+  position: absolute;
+  top: 1.1em;
+  right: 1.1em;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 2.3em;
+  height: 2.3em;
+  border-radius: 50%;
+  background: #eef3fd;
+  color: $edu-accent-deep;
+  font-size: $type-size-6;
+  transition: background 0.3s ease, color 0.3s ease;
+
+  i { transition: transform 0.3s $edu-ease; }
+
+  &:focus-visible {
+    outline: 2px solid $edu-accent;
+    outline-offset: 2px;
+  }
+}
+
+.edu-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.3em 0.8em;
+  border-radius: 999px;
+  font-size: $type-size-6;
+  font-weight: 600;
+
+  &--current {
+    background: #e7f7ec;
+    color: #157a3b;
+  }
+
+  &--done {
+    background: #e8effd;
+    color: $edu-accent;
+  }
+}
+
+.edu-badge__dot {
+  position: relative;
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 50%;
+  background: $edu-green;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: $edu-green;
+    animation: edu-ping 1.8s ease-out infinite;
+  }
+}
+
+.edu-card__degree {
+  margin: 0.55em 0 0.15em;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.45em;
+  line-height: 1.2;
+  color: $edu-ink;
+
+  @include breakpoint($medium) {
+    font-size: 1.6em;
+  }
+}
+
+.edu-card__school {
+  display: inline-block;
+  font-size: $type-size-4;
+  font-weight: 600;
+  color: $edu-accent;
+  background: linear-gradient($edu-accent, $edu-accent) left bottom / 0 2px no-repeat;
+  transition: background-size 0.4s $edu-ease;
+
+  &:hover {
+    color: $edu-accent;
+    background-size: 100% 2px;
+  }
+}
+
+.edu-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em 1.4em;
+  margin: 0.9em 0 0;
+  padding: 0 0 0.9em;
+  list-style: none;
+  font-size: $type-size-6;
+  border-bottom: 1px solid $edu-line;
+
+  li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55em;
+    margin: 0;
+    font-size: 1.2em;
+    color: #374151;
+  }
+
+  i {
+    width: 1em;
+    color: $edu-accent;
+    text-align: center;
+  }
+}
+
+.edu-card__desc {
+  margin: 0.9em 0 0;
+  font-size: 0.95em;
+  line-height: 1.65;
+}
+
+/* Scroll reveal (only when the script has run)
+   ========================================================================== */
+
+.edu--animate .edu-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s $edu-ease, transform 0.8s $edu-ease, box-shadow 0.45s $edu-ease, border-color 0.45s $edu-ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  &.is-visible:hover {
+    transform: translateY(-6px);
+  }
+}
+
+/* Keyframes
+   ========================================================================== */
+
+@keyframes edu-rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes edu-fade {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes edu-grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes edu-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+@keyframes edu-sway {
+  0%, 100% { transform: rotate(0deg); }
+  50%      { transform: rotate(4deg); }
+}
+
+@keyframes edu-twinkle {
+  0%, 100% { opacity: 0.25; transform: scale(0.7); }
+  50%      { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes edu-ping {
+  0%   { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .edu *,
+  .edu *::before,
+  .edu *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .edu--animate .edu-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

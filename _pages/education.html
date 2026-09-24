@@ -1,0 +1,117 @@
+---
+layout: archive
+title: "Education"
+permalink: /education/
+author_profile: true
+hide_title: true
+---
+
+{% include base_path %}
+
+<div class="edu">
+
+  <section class="edu-hero">
+    <div class="edu-hero__text">
+      <p class="edu-hero__eyebrow">Education</p>
+      <h1 class="edu-hero__title">Education</h1>
+      <p class="edu-hero__subtitle">My Academic Journey</p>
+      <p class="edu-hero__intro">The degrees that shaped my path in computer science, from an undergraduate foundation at BRAC University to doctoral research at the University of Kentucky.</p>
+    </div>
+
+    <div class="edu-hero__art" aria-hidden="true">
+      <svg class="edu-hero__svg" viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" focusable="false">
+        <defs>
+          <radialGradient id="edu-halo" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#dbe7ff"/>
+            <stop offset="100%" stop-color="#dbe7ff" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="edu-board" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#2c55c9"/>
+            <stop offset="100%" stop-color="#132f86"/>
+          </linearGradient>
+        </defs>
+
+        <circle cx="160" cy="130" r="112" fill="url(#edu-halo)"/>
+
+        <ellipse class="edu-orbit" cx="160" cy="150" rx="140" ry="34" fill="none" stroke="#9dbcf5" stroke-width="1.5" stroke-dasharray="3 7"/>
+        <circle r="4.5" fill="#4f7fe8">
+          <animateMotion dur="9s" repeatCount="indefinite" path="M20,150 a140,34 0 1,0 280,0 a140,34 0 1,0 -280,0"/>
+        </circle>
+
+        <g class="edu-float">
+          <!-- bottom book -->
+          <rect x="66" y="178" width="188" height="28" rx="5" fill="#0f2a6b"/>
+          <rect x="82" y="183" width="168" height="18" rx="2" fill="#f7f9fd"/>
+          <path d="M86 188h160M86 192h160M86 196h160" stroke="#d5deec" stroke-width="1"/>
+          <!-- middle book -->
+          <rect x="78" y="152" width="170" height="26" rx="5" fill="#2f5fd0"/>
+          <rect x="92" y="157" width="152" height="16" rx="2" fill="#f7f9fd"/>
+          <path d="M96 162h144M96 166h144M96 170h144" stroke="#d5deec" stroke-width="1"/>
+          <!-- top book -->
+          <rect x="72" y="128" width="176" height="24" rx="5" fill="#1b3f9e"/>
+          <rect x="86" y="133" width="158" height="14" rx="2" fill="#f7f9fd"/>
+          <path d="M90 138h150M90 142h150" stroke="#d5deec" stroke-width="1"/>
+
+          <!-- mortarboard -->
+          <path d="M114 98v22c0 8 21.5 14 46 14s46-6 46-14V98z" fill="#10266f"/>
+          <path d="M160 58 252 88 160 118 68 88z" fill="url(#edu-board)"/>
+          <path d="M160 58 252 88 160 76 68 88z" fill="#ffffff" opacity="0.12"/>
+          <circle cx="160" cy="88" r="4.5" fill="#f2b632"/>
+          <path class="edu-tassel" d="M160 88 Q196 90 226 96 L226 128" fill="none" stroke="#f2b632" stroke-width="3" stroke-linecap="round"/>
+          <path class="edu-tassel" d="M220 126h12l2 20h-16z" fill="#f2b632"/>
+        </g>
+
+        <g fill="#f2b632">
+          <path class="edu-spark" d="M56 70l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
+          <path class="edu-spark edu-spark--2" d="M270 52l2.2 6 6 2.2-6 2.2-2.2 6-2.2-6-6-2.2 6-2.2z"/>
+          <path class="edu-spark edu-spark--3" d="M282 170l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/>
+        </g>
+        <circle class="edu-bubble" cx="44" cy="150" r="7" fill="#c9daf9"/>
+        <circle class="edu-bubble edu-bubble--2" cx="288" cy="112" r="9" fill="#d7e4fb"/>
+      </svg>
+    </div>
+  </section>
+
+  <div class="edu-list">
+
+    <article class="edu-card edu-reveal">
+      <a class="edu-card__go" href="https://cs.engr.uky.edu/" aria-label="University of Kentucky Department of Computer Science"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+      <div class="edu-card__logo">
+        <img src="{{ base_path }}/images/logos/uky.svg" alt="University of Kentucky logo" width="140" height="115">
+      </div>
+      <div class="edu-card__body">
+        <span class="edu-badge edu-badge--current"><span class="edu-badge__dot"></span>Current</span>
+        <h2 class="edu-card__degree">PhD in Computer Science</h2>
+        <a class="edu-card__school" href="https://www.uky.edu/">University of Kentucky</a>
+        <ul class="edu-meta">
+          <li><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>Fall 2024 &ndash; Present</li>
+          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Lexington, Kentucky, USA</li>
+        </ul>
+        <p class="edu-card__desc">Doctoral studies in the Department of Computer Science, with research focused on federated learning.</p>
+      </div>
+      <img class="edu-card__mark" src="{{ base_path }}/images/logos/uky.svg" alt="" aria-hidden="true">
+    </article>
+
+    <article class="edu-card edu-reveal">
+      <a class="edu-card__go" href="https://cse.bracu.ac.bd/" aria-label="BRAC University Department of Computer Science and Engineering"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+      <div class="edu-card__logo">
+        <img src="{{ base_path }}/images/logos/bracu.svg" alt="BRAC University logo" width="130" height="110">
+      </div>
+      <div class="edu-card__body">
+        <span class="edu-badge edu-badge--done"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>Graduated</span>
+        <h2 class="edu-card__degree">B.Sc. in Computer Science and Engineering</h2>
+        <a class="edu-card__school" href="https://www.bracu.ac.bd/">BRAC University</a>
+        <ul class="edu-meta">
+          <li><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>June 2021</li>
+          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Dhaka, Bangladesh</li>
+          <li><i class="fa-solid fa-award" aria-hidden="true"></i>GPA 3.90/4.00</li>
+        </ul>
+        <p class="edu-card__desc">Undergraduate studies in the Department of Computer Science and Engineering, where I built my foundation in computing and later returned to teach as a lecturer.</p>
+      </div>
+      <img class="edu-card__mark" src="{{ base_path }}/images/logos/bracu.svg" alt="" aria-hidden="true">
+    </article>
+
+  </div>
+</div>
+
+<script src="{{ base_path }}/assets/js/education.js" defer></script>
