@@ -605,6 +605,301 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   border-color: #c3d5f6;
 }
 
+/* Home page
+   ========================================================================== */
+
+.home-hero__hello {
+  margin: 0;
+  font-size: 0.8em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $edu-accent;
+  animation: edu-rise 0.8s $edu-ease both;
+}
+
+.home-hero__name {
+  margin-bottom: 0.2em;
+  animation: edu-rise 0.8s 0.05s $edu-ease both;
+}
+
+.home-hero__role {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0 0 0.5em;
+  font-size: 0.85em;
+  font-weight: 600;
+  color: $edu-accent-deep;
+  animation: edu-rise 0.8s 0.1s $edu-ease both;
+
+  i { color: $edu-accent; }
+}
+
+.home-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin-top: 0.8em;
+  animation: edu-rise 0.8s 0.2s $edu-ease both;
+
+  .pub-btn { font-size: 0.75em; }
+}
+
+.home-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: home-pulse 2.4s ease-out infinite;
+}
+
+.home-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.7em;
+  margin-bottom: 1.4em;
+
+  @include breakpoint($medium) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.home-stat {
+  display: grid;
+  justify-items: center;
+  gap: 0.15em;
+  padding: 0.9em 0.5em 0.8em;
+  border: 1px solid $edu-line;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 10px 26px -20px rgba($edu-accent-deep, 0.45);
+  text-align: center;
+  transition: transform 0.45s $edu-ease, box-shadow 0.45s $edu-ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 34px -22px rgba($edu-accent-deep, 0.55);
+  }
+}
+
+.home-stat__icon {
+  display: grid;
+  place-items: center;
+  width: 2.1em;
+  height: 2.1em;
+  border-radius: 12px;
+  background: #eef3fd;
+  color: $edu-accent;
+  font-size: 0.85em;
+}
+
+.home-stat__num {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.7em;
+  font-weight: 700;
+  line-height: 1.1;
+  color: $edu-ink;
+}
+
+.home-stat__label {
+  font-size: 0.72em;
+  font-weight: 600;
+  color: $edu-muted;
+}
+
+.home-section {
+  margin-bottom: 1.4em;
+}
+
+.home-panel {
+  padding: 1em 1.2em;
+  border: 1px solid $edu-line;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 10px 30px -22px rgba($edu-accent-deep, 0.4);
+
+  p {
+    margin: 0 0 0.75em;
+    font-size: 0.85em;
+    line-height: 1.7;
+  }
+
+  @include breakpoint($medium) {
+    padding: 1.2em 1.5em;
+  }
+}
+
+.home-interests {
+  margin: 0.2em 0 0.4em;
+}
+
+.home-panel .home-panel__links {
+  margin: 0.8em 0 0;
+  font-size: 0.78em;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45em;
+    font-weight: 600;
+    color: $edu-accent;
+  }
+}
+
+.home-roles {
+  display: grid;
+  gap: 0.7em;
+
+  @include breakpoint($medium) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.home-role {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75em;
+  padding: 0.9em 1em;
+  border: 1px solid $edu-line;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 10px 26px -20px rgba($edu-accent-deep, 0.45);
+  transition: transform 0.45s $edu-ease, box-shadow 0.45s $edu-ease, border-color 0.45s ease;
+
+  h3 {
+    margin: 0 0 0.2em;
+    font-size: 0.88em;
+    color: $edu-ink;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.74em;
+    line-height: 1.5;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: #cddcf6;
+    box-shadow: 0 18px 34px -22px rgba($edu-accent-deep, 0.55);
+
+    .home-role__icon { transform: rotate(-8deg) scale(1.08); }
+  }
+}
+
+.home-role__icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.2em;
+  height: 2.2em;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #3b74f0, $edu-accent-deep);
+  color: #fff;
+  font-size: 0.85em;
+  transition: transform 0.45s $edu-ease;
+}
+
+.home-explore {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.7em;
+
+  @include breakpoint($medium) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.home-link {
+  position: relative;
+  display: grid;
+  gap: 0.15em;
+  padding: 0.9em 1em;
+  border: 1px solid $edu-line;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 10px 26px -20px rgba($edu-accent-deep, 0.45);
+  overflow: hidden;
+  transition: transform 0.45s $edu-ease, box-shadow 0.45s $edu-ease, border-color 0.45s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(#e8effd, 0.9), rgba(#fff, 0));
+    opacity: 0;
+    transition: opacity 0.45s ease;
+  }
+
+  > * { position: relative; }
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: #cddcf6;
+    box-shadow: 0 18px 34px -22px rgba($edu-accent-deep, 0.55);
+
+    &::before { opacity: 1; }
+    .home-link__arrow { transform: translateX(4px); color: $edu-accent; }
+  }
+}
+
+.home-link__icon {
+  margin-bottom: 0.35em;
+  font-size: 1.1em;
+  color: $edu-accent;
+}
+
+.home-link__title {
+  font-size: 0.9em;
+  font-weight: 700;
+  color: $edu-ink;
+}
+
+.home-link__sub {
+  font-size: 0.72em;
+  color: $edu-muted;
+}
+
+.home-link__arrow {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  font-size: 0.8em;
+  color: #9dbcf5;
+  transition: transform 0.35s $edu-ease, color 0.35s ease;
+}
+
+.home-fun {
+  display: flex;
+  align-items: center;
+  gap: 0.9em;
+  padding: 0.9em 1.2em;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f5f8ff, #eef3fd);
+
+  p {
+    margin: 0;
+    font-size: 0.82em;
+    line-height: 1.6;
+  }
+
+  strong { color: #a50044; }
+
+  &:hover .home-fun__ball i { animation-duration: 1.2s; }
+}
+
+.home-fun__ball {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.4em;
+  height: 2.4em;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #004d98, #a50044);
+  color: #fff;
+
+  i { animation: home-spin 6s linear infinite; }
+}
+
 /* Keyframes
    ========================================================================== */
 
@@ -631,6 +926,15 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
 @keyframes edu-twinkle {
   0%, 100% { opacity: 0.25; transform: scale(0.7); }
   50%      { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes home-pulse {
+  0%   { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+@keyframes home-spin {
+  to { transform: rotate(360deg); }
 }
 
 @keyframes edu-ping {

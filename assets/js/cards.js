@@ -30,10 +30,25 @@
   var cards = root.querySelectorAll('.edu-reveal');
   root.classList.add('edu--animate');
 
+  function countUp(el) {
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    var suffix = el.getAttribute('data-suffix') || '';
+    if (!target) return;
+    var start = Date.now();
+    var step = function () {
+      var t = Math.min((Date.now() - start) / 1200, 1);
+      el.textContent = Math.round(target * (1 - Math.pow(1 - t, 3))) + suffix;
+      if (t < 1) window.setTimeout(step, 30);
+    };
+    el.textContent = '0' + suffix;
+    window.setTimeout(step, 30);
+  }
+
   var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (!entry.isIntersecting) return;
       entry.target.classList.add('is-visible');
+      Array.prototype.forEach.call(entry.target.querySelectorAll('[data-count]'), countUp);
       observer.unobserve(entry.target);
     });
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
