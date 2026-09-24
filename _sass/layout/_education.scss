@@ -29,9 +29,9 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
-  gap: 0.75em;
-  margin-bottom: 1.4em;
-  padding: 1.2em 1.2em 0.8em;
+  gap: 0.5em;
+  margin-bottom: 1em;
+  padding: 0.9em 1em 0.6em;
   border-radius: 20px;
   background:
     radial-gradient(circle at 85% 30%, rgba(#bcd2fb, 0.55), transparent 55%),
@@ -40,7 +40,7 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
 
   @include breakpoint($medium) {
     grid-template-columns: 1.5fr 1fr;
-    padding: 1.4em 1.75em 1.2em;
+    padding: 1em 1.4em 0.8em;
   }
 }
 
@@ -49,22 +49,22 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .edu-hero__subtitle {
-  margin: 0 0 0.45em;
+  margin: 0 0 0.3em;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.6em;
+  font-size: 1.35em;
   font-weight: 700;
   line-height: 1.15;
   color: $edu-ink;
 
   @include breakpoint($medium) {
-    font-size: 1.9em;
+    font-size: 1.55em;
   }
 }
 
 .edu-hero__intro {
   margin: 0;
   max-width: 34em;
-  font-size: 0.95em;
+  font-size: 0.82em;
   line-height: 1.6;
   animation-delay: 0.1s;
 }
@@ -72,11 +72,11 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
 .edu-hero__art {
   justify-self: center;
   width: 100%;
-  max-width: 170px;
+  max-width: 140px;
   animation: edu-fade 1s 0.2s ease both;
 
   @include breakpoint($medium) {
-    max-width: 220px;
+    max-width: 170px;
   }
 }
 
@@ -117,15 +117,15 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
 
 .edu-list {
   display: grid;
-  gap: 1.1em;
+  gap: 0.8em;
 }
 
 .edu-card {
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0.6em;
-  padding: 1.1em 1.1em 1.1em;
+  gap: 0.4em;
+  padding: 0.85em 0.95em 0.85em;
   border: 1px solid $edu-line;
   border-radius: 18px;
   background: $edu-card-bg;
@@ -161,7 +161,7 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   @include breakpoint($medium) {
     grid-template-columns: 140px 1fr;
     gap: 0;
-    padding: 1.2em 1.5em 1.15em 0;
+    padding: 0.9em 1.25em 0.85em 0;
   }
 }
 
@@ -174,18 +174,18 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   img {
     display: block;
     width: auto;
-    max-width: 90px;
-    max-height: 76px;
+    max-width: 76px;
+    max-height: 64px;
     transition: transform 0.6s $edu-ease;
   }
 
   @include breakpoint($medium) {
-    padding: 0 1em;
+    padding: 0 0.8em;
     border-right: 1px solid $edu-line;
 
     img {
-      max-width: 100px;
-      max-height: 86px;
+      max-width: 84px;
+      max-height: 72px;
     }
   }
 }
@@ -196,7 +196,7 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   min-width: 0;
 
   @include breakpoint($medium) {
-    padding-left: 1.5em;
+    padding-left: 1.2em;
     padding-right: 2.5em;
   }
 }
@@ -205,7 +205,7 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   position: absolute;
   top: 50%;
   right: -1.5em;
-  width: 170px;
+  width: 140px;
   opacity: 0.045;
   transform: translateY(-50%);
   pointer-events: none;
@@ -220,8 +220,8 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   z-index: 2;
   display: grid;
   place-items: center;
-  width: 2.3em;
-  height: 2.3em;
+  width: 2em;
+  height: 2em;
   border-radius: 50%;
   background: #eef3fd;
   color: $edu-accent-deep;
@@ -240,9 +240,9 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
-  padding: 0.3em 0.8em;
+  padding: 0.2em 0.7em;
   border-radius: 999px;
-  font-size: $type-size-6;
+  font-size: $type-size-7;
   font-weight: 600;
 
   &--current {
@@ -274,20 +274,20 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .edu-card__degree {
-  margin: 0.45em 0 0.1em;
+  margin: 0.35em 0 0.05em;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.25em;
+  font-size: 1.1em;
   line-height: 1.2;
   color: $edu-ink;
 
   @include breakpoint($medium) {
-    font-size: 1.35em;
+    font-size: 1.15em;
   }
 }
 
 .edu-card__school {
   display: inline-block;
-  font-size: 1.05em;
+  font-size: 0.9em;
   font-weight: 600;
   color: $edu-accent;
   background: linear-gradient($edu-accent, $edu-accent) left bottom / 0 2px no-repeat;
@@ -302,9 +302,9 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
 .edu-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5em 1.4em;
-  margin: 0.6em 0 0;
-  padding: 0 0 0.6em;
+  gap: 0.35em 1.2em;
+  margin: 0.45em 0 0;
+  padding: 0 0 0.45em;
   list-style: none;
   font-size: $type-size-6;
   border-bottom: 1px solid $edu-line;
@@ -314,7 +314,7 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
     align-items: center;
     gap: 0.55em;
     margin: 0;
-    font-size: 1.15em;
+    font-size: 1em;
     color: #374151;
   }
 
@@ -326,8 +326,8 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .edu-card__desc {
-  margin: 0.6em 0 0;
-  font-size: 0.9em;
+  margin: 0.45em 0 0;
+  font-size: 0.8em;
   line-height: 1.6;
 }
 
