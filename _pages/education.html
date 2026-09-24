@@ -71,7 +71,8 @@ hide_title: true
   </section>
 
   <div class="edu-list">
-    {% for item in site.data.education %}
+    {% assign degrees = site.education | sort: "date" | reverse %}
+    {% for item in degrees %}
     <article class="edu-card edu-reveal">
       {% if item.dept_url %}
       <a class="edu-card__go" href="{{ item.dept_url }}" aria-label="{{ item.dept_label | default: item.school }}"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
@@ -85,7 +86,7 @@ hide_title: true
         {% elsif item.status == "graduated" %}
         <span class="edu-badge edu-badge--done"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>Graduated</span>
         {% endif %}
-        <h2 class="edu-card__degree">{{ item.degree }}</h2>
+        <h2 class="edu-card__degree">{{ item.title }}</h2>
         {% if item.school_url %}<a class="edu-card__school" href="{{ item.school_url }}">{{ item.school }}</a>{% else %}<span class="edu-card__school">{{ item.school }}</span>{% endif %}
         <ul class="edu-meta">
           <li><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>{{ item.period }}</li>
