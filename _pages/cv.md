@@ -35,6 +35,7 @@ Work Experience
 * October 2021 - December 2022: Part Time Lecturer
   * Department of Computer Science and Engineering, BRAC University
   * Courses Conducted: Digital Logic Design, Database Systems, Computer Interfacing, Introduction to Robotics
+  * Course codes taught across both lecturer roles at BRAC University: CSE110, CSE220, CSE260, CSE360, CSE370, CSE461
 
 * February 2020 - December 2020: Undergraduate Teaching Assistant
   * Department of Computer Science and Engineering, BRAC University
@@ -55,10 +56,11 @@ Publications
 
 Research Interests
 ======
-* Efficient AI
+* Machine Learning
 * Deep Learning
 * Biomedical Image Processing
 * Human-Computer Interaction
+* Cybersecurity
 
 Technical Skills
 ======
@@ -80,7 +82,11 @@ Honors and Awards
 * Vice Chancellor's Honor List, 8 times, BRAC University
 * Dean's Honor List, 2 times, BRAC University
 * Bronze Standard, The Duke of Edinburgh's International Award (2017)
+* Government Scholarship, Class 5
+* Government Scholarship, Class 8
 
 Service and leadership
 ======
 * Journal Reviewer, Frontiers in Signal Processing - Biomedical Signal Processing (Science and Technology)
+
+See also my [BRAC University faculty profile](https://cse.bracu.ac.bd/faculty_profile/94/ahashan_habib_niloy).
