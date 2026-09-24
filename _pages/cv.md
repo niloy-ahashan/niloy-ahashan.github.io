@@ -9,56 +9,78 @@ redirect_from:
 
 {% include base_path %}
 
+Download the full PDF version [here]({{ site.url }}{{ site.baseurl }}/files/CV_Ahashan_Habib_Niloy.pdf).
+
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* PhD in Computer Science, University of Kentucky, Fall 2024 - Present
+* B.Sc. in Computer Science and Engineering, BRAC University, GPA 3.90/4.00, June 2021
+  * Selected Coursework: Programming Language, Data Structures and Algorithms, Discrete Mathematics, Computer Networks, Operating Systems, Artificial Intelligence, Software Engineering, Elements of Statistics and Probability, Linear Algebra and Fourier Analysis
+* Higher Secondary Certificate, Rangpur Cadet College, GPA 5.00/5.00, August 2016
+* Secondary School Certificate, Rangpur Cadet College, GPA 5.00/5.00, May 2014
 
-Work experience
+Work Experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* Fall 2025 - Present: Graduate Teaching Assistant
+  * Department of Computer Science, University of Kentucky
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Fall 2024 - Summer 2025: Graduate Research Assistant
+  * Department of Computer Science, University of Kentucky
+  * Area of Research: Federated Learning, Algorithm, Database, Networking
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
+* January 2023 - Present: Lecturer
+  * Department of Computer Science and Engineering, BRAC University
+  * Courses Conducted: Programming Language I, Data Structures, Digital Logic Design, Database Systems
+
+* October 2021 - December 2022: Part Time Lecturer
+  * Department of Computer Science and Engineering, BRAC University
+  * Courses Conducted: Digital Logic Design, Database Systems, Computer Interfacing, Introduction to Robotics
+
+* February 2020 - December 2020: Undergraduate Teaching Assistant
+  * Department of Computer Science and Engineering, BRAC University
+  * Course Assisted: Algorithm
+
+Research Experience
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* May 2020 - June 2021: Undergraduate Thesis
+  * Department of Computer Science and Engineering, BRAC University
+  * Thesis Title: Comparative Study of X-ray and CT Scan Images for the Detection of COVID-19 using Deep Learning
+  * Thesis Supervisor: Dr. Mohammad Zavid Parvez
 
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
-Talks
+
+Research Interests
 ======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
+* Efficient AI
+* Deep Learning
+* Biomedical Image Processing
+* Human-Computer Interaction
+
+Technical Skills
 ======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
+* Programming Languages: Python, Java, SQL
+* Python Libraries: PyTorch, Pandas, NumPy, Scikit-learn, Matplotlib, TensorFlow, Keras
+* Web Programming: MySQL, HTML5, CSS3, JavaScript
+* Report Writing: LaTeX
+
+Languages
+======
+* Bangla: Fluent in Speaking, Writing, Reading, and Listening
+* English: Fluent in Speaking, Writing, Reading, and Listening
+
+Honors and Awards
+======
+* Performance-Based Scholarship (70%) at BRAC University for four consecutive years (2017-2021)
+* Secured 8th Position in Dinajpur Education Board in Higher Secondary Certificate and awarded the Talent Pool Scholarship (2016)
+* Graduated with the Highest Distinction from BRAC University (2021)
+* Vice Chancellor's Honor List, 8 times, BRAC University
+* Dean's Honor List, 2 times, BRAC University
+* Bronze Standard, The Duke of Edinburgh's International Award (2017)
+
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* Journal Reviewer, Frontiers in Signal Processing - Biomedical Signal Processing (Science and Technology)
