@@ -22,11 +22,11 @@ repository               : "niloy-ahashan/niloy-ahashan.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "images/niloy.jpeg"
   name             : "Ahashan Habib Niloy"
-  pronouns         : # example: "she/her"
+  pronouns         : "He/Him"
   bio              : "PhD student in Computer Science, University of Kentucky. Researching communication-efficient federated learning."
-  location         : "Lexington, Kentucky, USA"
+  location         : "Kentucky, United States"
   employer         : "University of Kentucky"
   uri              : # URL
   email            : "ahashan.niloy@uky.edu"
