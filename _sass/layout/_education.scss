@@ -325,6 +325,11 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   }
 }
 
+.edu-meta:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
 .edu-card__desc {
   margin: 0.45em 0 0;
   font-size: 0.8em;
