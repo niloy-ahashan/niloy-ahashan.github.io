@@ -28,7 +28,8 @@ author:
   bio              : "PhD student in Computer Science, University of Kentucky."
   location         : "Kentucky, United States"
   employer         : "University of Kentucky"
-  uri              : "https://www.uky.edu/"
+  employer_url     : "https://www.uky.edu/"
+  uri              : # URL
   email            : "ahashan.niloy@uky.edu"
 
   # Academic websites
