@@ -1,0 +1,51 @@
+# Education page entries, shown newest first in the order listed here.
+#
+# Fields:
+#   degree        Card title.
+#   school        Institution name (links to school_url).
+#   school_url    Institution homepage.
+#   dept_url      Where the round arrow button goes.
+#   dept_label    Accessible label for the arrow button.
+#   period        Dates as displayed, e.g. "Fall 2024 – Present" or "June 2021".
+#   location      City, region, country.
+#   gpa           Optional, e.g. "3.90/4.00".
+#   status        "current" (green pulsing badge) or "graduated".
+#   logo          File in images/logos/.
+#   photo         Optional file in images/campus/, shown on hover.
+#   photo_position Optional CSS object-position for the photo, e.g. "50% 80%".
+
+- degree: PhD in Computer Science
+  school: University of Kentucky
+  school_url: https://www.uky.edu/
+  dept_url: https://cs.engr.uky.edu/
+  dept_label: University of Kentucky Department of Computer Science
+  period: Fall 2024 – Present
+  location: Lexington, Kentucky, USA
+  status: current
+  logo: uky.svg
+  photo: uky.jpg
+  photo_position: 50% 80%
+
+- degree: B.Sc. in Computer Science and Engineering
+  school: BRAC University
+  school_url: https://www.bracu.ac.bd/
+  dept_url: https://cse.bracu.ac.bd/
+  dept_label: BRAC University Department of Computer Science and Engineering
+  period: June 2021
+  location: Dhaka, Bangladesh
+  gpa: 3.90/4.00
+  status: graduated
+  logo: bracu.svg
+  photo: bracu.jpg
+
+- degree: Higher Secondary Certificate
+  school: Rangpur Cadet College
+  school_url: https://ccr.army.mil.bd/
+  dept_url: https://ccr.army.mil.bd/
+  dept_label: Rangpur Cadet College website
+  period: August 2016
+  location: Rangpur, Bangladesh
+  gpa: 5.00/5.00
+  status: graduated
+  logo: rcc.png
+  photo: rcc.jpg

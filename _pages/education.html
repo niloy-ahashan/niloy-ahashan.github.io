@@ -71,63 +71,34 @@ hide_title: true
   </section>
 
   <div class="edu-list">
-
+    {% for item in site.data.education %}
     <article class="edu-card edu-reveal">
-      <a class="edu-card__go" href="https://cs.engr.uky.edu/" aria-label="University of Kentucky Department of Computer Science"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+      {% if item.dept_url %}
+      <a class="edu-card__go" href="{{ item.dept_url }}" aria-label="{{ item.dept_label | default: item.school }}"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+      {% endif %}
       <div class="edu-card__logo">
-        <img src="{{ base_path }}/images/logos/uky.svg" alt="University of Kentucky logo" width="140" height="115">
+        <img src="{{ base_path }}/images/logos/{{ item.logo }}" alt="{{ item.school }} logo" width="120" height="110">
       </div>
       <div class="edu-card__body">
+        {% if item.status == "current" %}
         <span class="edu-badge edu-badge--current"><span class="edu-badge__dot"></span>Current</span>
-        <h2 class="edu-card__degree">PhD in Computer Science</h2>
-        <a class="edu-card__school" href="https://www.uky.edu/">University of Kentucky</a>
-        <ul class="edu-meta">
-          <li><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>Fall 2024 &ndash; Present</li>
-          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Lexington, Kentucky, USA</li>
-        </ul>
-      </div>
-      <img class="edu-card__mark" src="{{ base_path }}/images/logos/uky.svg" alt="" aria-hidden="true">
-      <div class="edu-card__photo" aria-hidden="true"><img src="{{ base_path }}/images/campus/uky.jpg" alt="" loading="lazy" style="object-position: 50% 80%"></div>
-    </article>
-
-    <article class="edu-card edu-reveal">
-      <a class="edu-card__go" href="https://cse.bracu.ac.bd/" aria-label="BRAC University Department of Computer Science and Engineering"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
-      <div class="edu-card__logo">
-        <img src="{{ base_path }}/images/logos/bracu.svg" alt="BRAC University logo" width="130" height="110">
-      </div>
-      <div class="edu-card__body">
+        {% elsif item.status == "graduated" %}
         <span class="edu-badge edu-badge--done"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>Graduated</span>
-        <h2 class="edu-card__degree">B.Sc. in Computer Science and Engineering</h2>
-        <a class="edu-card__school" href="https://www.bracu.ac.bd/">BRAC University</a>
+        {% endif %}
+        <h2 class="edu-card__degree">{{ item.degree }}</h2>
+        {% if item.school_url %}<a class="edu-card__school" href="{{ item.school_url }}">{{ item.school }}</a>{% else %}<span class="edu-card__school">{{ item.school }}</span>{% endif %}
         <ul class="edu-meta">
-          <li><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>June 2021</li>
-          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Dhaka, Bangladesh</li>
-          <li><i class="fa-solid fa-award" aria-hidden="true"></i>GPA 3.90/4.00</li>
+          <li><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>{{ item.period }}</li>
+          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{{ item.location }}</li>
+          {% if item.gpa %}<li><i class="fa-solid fa-award" aria-hidden="true"></i>GPA {{ item.gpa }}</li>{% endif %}
         </ul>
       </div>
-      <img class="edu-card__mark" src="{{ base_path }}/images/logos/bracu.svg" alt="" aria-hidden="true">
-      <div class="edu-card__photo" aria-hidden="true"><img src="{{ base_path }}/images/campus/bracu.jpg" alt="" loading="lazy"></div>
+      <img class="edu-card__mark" src="{{ base_path }}/images/logos/{{ item.logo }}" alt="" aria-hidden="true">
+      {% if item.photo %}
+      <div class="edu-card__photo" aria-hidden="true"><img src="{{ base_path }}/images/campus/{{ item.photo }}" alt="" loading="lazy"{% if item.photo_position %} style="object-position: {{ item.photo_position }}"{% endif %}></div>
+      {% endif %}
     </article>
-
-    <article class="edu-card edu-reveal">
-      <a class="edu-card__go" href="https://ccr.army.mil.bd/" aria-label="Rangpur Cadet College website"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
-      <div class="edu-card__logo">
-        <img src="{{ base_path }}/images/logos/rcc.png" alt="Rangpur Cadet College logo" width="120" height="120">
-      </div>
-      <div class="edu-card__body">
-        <span class="edu-badge edu-badge--done"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>Graduated</span>
-        <h2 class="edu-card__degree">Higher Secondary Certificate</h2>
-        <a class="edu-card__school" href="https://ccr.army.mil.bd/">Rangpur Cadet College</a>
-        <ul class="edu-meta">
-          <li><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>August 2016</li>
-          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Rangpur, Bangladesh</li>
-          <li><i class="fa-solid fa-award" aria-hidden="true"></i>GPA 5.00/5.00</li>
-        </ul>
-      </div>
-      <img class="edu-card__mark" src="{{ base_path }}/images/logos/rcc.png" alt="" aria-hidden="true">
-      <div class="edu-card__photo" aria-hidden="true"><img src="{{ base_path }}/images/campus/rcc.jpg" alt="" loading="lazy"></div>
-    </article>
-
+    {% endfor %}
   </div>
 </div>
 
