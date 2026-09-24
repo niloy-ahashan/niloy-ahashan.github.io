@@ -6,7 +6,7 @@
 {% endif %}
 {% assign seo_url = seo_url | default: site.github.url %}
 
-{% if page.title %}
+{% if page.title and page.title != site.title %}
   {% assign seo_title = page.title | append: " " | append: site.title_separator | append: " " | append: site.title %}
 {% endif %}
 
@@ -48,9 +48,11 @@
   <meta property="og:url" content="{{ page.url | prepend: seo_url | replace: "/index.html", "/" }}">
 {% endif %}
 
-{% if page.excerpt %}
-  <meta property="og:description" name="description" content="{{ seo_description }}">
+{% if seo_description %}
+  <meta name="description" content="{{ seo_description }}">
+  <meta property="og:description" content="{{ seo_description }}">
 {% endif %}
+<meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}">
 
 {% if site.twitter.username %}
   <meta name="twitter:site" content="@{{ site.twitter.username | replace: "@", "" }}">
@@ -87,10 +89,21 @@
   <meta property="og:image" content="{% if page.header.image contains "://" %}{{ page.header.image }}{% else %}{{ page.header.image | prepend: "/images/" | prepend: base_path }}{% endif %}">
 {% elsif page.header.overlay_image %}
   <meta property="og:image" content="{% if page.header.overlay_image contains "://" %}{{ page.header.overlay_image }}{% else %}{{ page.header.overlay_image | prepend: "/images/" | prepend: base_path }}{% endif %}">
+{% elsif site.og_image %}
+  <meta property="og:image" content="{{ site.og_image | prepend: "/images/" | prepend: base_path }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{ site.title }}, {{ site.description | escape_once }}">
 {% endif %}
 
+{% unless site.twitter.username %}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
+  {% if seo_description %}<meta name="twitter:description" content="{{ seo_description }}">{% endif %}
+  {% if site.og_image %}<meta name="twitter:image" content="{{ site.og_image | prepend: "/images/" | prepend: base_path }}">{% endif %}
+{% endunless %}
+
 {% if page.date %}
-  <meta property="og:type" content="article">
   <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
 {% endif %}
 
@@ -101,28 +114,23 @@
   <link rel="next" href="{{ paginator.next_page_path | prepend: seo_url }}">
 {% endif %}
 
-{% if site.og_image %}
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "url": {{ seo_url | jsonify }},
-      "logo": {{ site.og_image | prepend: "/images/" | prepend: base_path | jsonify }}
-    }
-  </script>
-{% endif %}
-
-{% if site.social %}
-  <script type="application/ld+json">
-    {
-      "@context" : "http://schema.org",
-      "@type" : "{% if site.social.type %}{{ site.social.type }}{% else %}Person{% endif %}",
-      "name" : "{{ site.social.name | default: site.name }}",
-      "url" : {{ seo_url | jsonify }},
-      "sameAs" : {{ site.social.links | jsonify }}
-    }
-  </script>
-{% endif %}
+{% assign seo_person = site.author %}
+{% assign seo_links = "" | split: "" %}
+{% if seo_person.googlescholar %}{% assign seo_links = seo_links | push: seo_person.googlescholar %}{% endif %}
+{% if seo_person.github %}{% assign seo_link = "https://github.com/" | append: seo_person.github %}{% assign seo_links = seo_links | push: seo_link %}{% endif %}
+{% if seo_person.linkedin %}{% assign seo_link = "https://www.linkedin.com/in/" | append: seo_person.linkedin %}{% assign seo_links = seo_links | push: seo_link %}{% endif %}
+{% if seo_person.youtube %}{% assign seo_link = "https://www.youtube.com/@" | append: seo_person.youtube %}{% assign seo_links = seo_links | push: seo_link %}{% endif %}
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "name": {{ seo_person.name | default: site.title | jsonify }},
+    "url": {{ seo_url | jsonify }},
+    "image": {{ seo_person.avatar | prepend: "/images/" | prepend: base_path | jsonify }},
+    "affiliation": {{ seo_person.employer | jsonify }},
+    "sameAs": {{ seo_links | jsonify }}
+  }
+</script>
 
 {% if site.google_site_verification %}
   <meta name="google-site-verification" content="{{ site.google_site_verification }}" />
