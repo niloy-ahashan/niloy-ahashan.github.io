@@ -106,3 +106,128 @@ $brand-ease   : cubic-bezier(0.22, 1, 0.36, 1);
   0%, 100% { transform: none; }
   40%      { transform: translateY(-0.18em); }
 }
+
+/* ==========================================================================
+   HEADER PAGE LINKS (Education, Research, ...) - friendly font, hover pill,
+   gradient underline, press + ripple on click, highlight for current page
+   ========================================================================== */
+
+:root {
+  --nav-pill        : #eef3fd;
+  --nav-pill-active : #e3ecfd;
+  --nav-text-hover  : #{$brand-blue};
+  --nav-ripple      : rgba(31, 79, 191, 0.25);
+}
+
+html[data-theme="dark"] {
+  --nav-pill        : #18233d;
+  --nav-pill-active : #1d2b4b;
+  --nav-text-hover  : #a9c4ff;
+  --nav-ripple      : rgba(127, 168, 255, 0.3);
+}
+
+.greedy-nav a.nav-link {
+  font-family: "Nunito", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.greedy-nav .visible-links a.nav-link {
+  isolation: isolate;
+  margin: 0 0.15rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  overflow: hidden;
+  transition: transform 0.35s $brand-ease, color 0.25s ease;
+
+  /* pill behind the text */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: var(--nav-pill);
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity 0.3s ease, transform 0.4s $brand-ease;
+  }
+
+  /* replace the theme's grey bar with a short gradient underline */
+  &:before {
+    left: 0.85rem;
+    right: 0.85rem;
+    bottom: 0.2rem;
+    width: auto;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, $brand-blue, $brand-light, $brand-gold);
+    transform-origin: left;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: var(--nav-text-hover);
+    transform: translateY(-2px);
+
+    &::after { opacity: 1; transform: scale(1); }
+  }
+
+  &:focus-visible {
+    outline: 2px solid $brand-blue;
+    outline-offset: 2px;
+  }
+
+  &:active {
+    transform: translateY(0) scale(0.94);
+    transition-duration: 0.1s;
+  }
+
+  &.is-active {
+    color: var(--nav-text-hover);
+    font-weight: 800;
+
+    &::after {
+      opacity: 1;
+      transform: scale(1);
+      background: var(--nav-pill-active);
+    }
+  }
+}
+
+.nav-link__text {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link__ripple {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  background: var(--nav-ripple);
+  pointer-events: none;
+  transform: scale(0);
+  animation: nav-ripple 0.6s ease-out forwards;
+}
+
+@keyframes nav-ripple {
+  to { transform: scale(2.6); opacity: 0; }
+}
+
+/* the ☰ overflow menu uses the same font and a tinted hover */
+.greedy-nav .hidden-links a.nav-link {
+  position: relative;
+  overflow: hidden;
+
+  &:hover { background: var(--nav-pill); color: var(--nav-text-hover); }
+  &.is-active { color: var(--nav-text-hover); font-weight: 800; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .greedy-nav .visible-links a.nav-link,
+  .greedy-nav .visible-links a.nav-link::after {
+    transition: none;
+  }
+
+  .greedy-nav .visible-links a.nav-link:hover { transform: none; }
+}
