@@ -1,0 +1,105 @@
+---
+layout: archive
+title: "Research"
+permalink: /research/
+author_profile: true
+hide_title: true
+---
+
+{% include base_path %}
+
+{% assign graduate = site.research | where: "research_group", "graduate" | sort: "date" | reverse %}
+{% assign undergraduate = site.research | where: "research_group", "undergraduate" | sort: "date" | reverse %}
+
+<div class="edu">
+
+  <section class="edu-hero">
+    <div class="edu-hero__text">
+      <h1 class="edu-hero__subtitle">Research Experience</h1>
+      <p class="edu-hero__intro">From an undergraduate thesis on deep learning for COVID-19 detection at BRAC University to graduate research on federated learning at the University of Kentucky.</p>
+    </div>
+
+    <div class="edu-hero__art" aria-hidden="true">
+      <svg class="edu-hero__svg" viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" focusable="false">
+        <defs>
+          <radialGradient id="res-halo" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#dbe7ff"/>
+            <stop offset="100%" stop-color="#dbe7ff" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="res-liquid" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#6d9bff"/>
+            <stop offset="100%" stop-color="#1f4fbf"/>
+          </linearGradient>
+          <clipPath id="res-flask-clip">
+            <path d="M136 60h28v44l38 72c5 10-2 20-13 20h-78c-11 0-18-10-13-20l38-72z"/>
+          </clipPath>
+        </defs>
+
+        <circle cx="160" cy="125" r="112" fill="url(#res-halo)"/>
+
+        <ellipse cx="160" cy="200" rx="140" ry="24" fill="none" stroke="#9dbcf5" stroke-width="1.5" stroke-dasharray="3 7"/>
+        <circle r="4.5" fill="#4f7fe8">
+          <animateMotion dur="9s" repeatCount="indefinite" path="M20,200 a140,24 0 1,0 280,0 a140,24 0 1,0 -280,0"/>
+        </circle>
+
+        <g class="edu-float">
+          <!-- small neural network beside the flask -->
+          <g stroke="#9dbcf5" stroke-width="1.5">
+            <path d="M232 70l30 18M232 70l30 44M232 106l30-18M232 106l30 8M262 88l24 13M262 114l24-13"/>
+          </g>
+          <g fill="#fff" stroke="#1f4fbf" stroke-width="2.5">
+            <circle cx="232" cy="70" r="6"/><circle cx="232" cy="106" r="6"/>
+            <circle cx="262" cy="88" r="6"/><circle cx="262" cy="114" r="6"/>
+            <circle cx="286" cy="101" r="6" fill="#f2b632" stroke="#c98a00"/>
+          </g>
+
+          <!-- flask -->
+          <g clip-path="url(#res-flask-clip)">
+            <rect x="80" y="130" width="160" height="80" fill="url(#res-liquid)"/>
+            <path class="res-wave" d="M80 132 q20 -8 40 0 t40 0 t40 0 t40 0 t40 0 v20 h-200z" fill="#9dbcf5" opacity="0.7"/>
+            <circle class="res-bubble" cx="140" cy="186" r="4" fill="#e8f0ff"/>
+            <circle class="res-bubble res-bubble--2" cx="162" cy="190" r="3" fill="#e8f0ff"/>
+            <circle class="res-bubble res-bubble--3" cx="178" cy="184" r="5" fill="#e8f0ff"/>
+          </g>
+          <path d="M136 60h28v44l38 72c5 10-2 20-13 20h-78c-11 0-18-10-13-20l38-72z" fill="none" stroke="#0f2a6b" stroke-width="5" stroke-linejoin="round"/>
+          <rect x="128" y="52" width="44" height="10" rx="4" fill="#0f2a6b"/>
+        </g>
+
+        <g fill="#f2b632">
+          <path class="edu-spark" d="M56 70l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
+          <path class="edu-spark edu-spark--2" d="M206 40l2.2 6 6 2.2-6 2.2-2.2 6-2.2-6-6-2.2 6-2.2z"/>
+          <path class="edu-spark edu-spark--3" d="M70 170l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/>
+        </g>
+        <circle class="edu-bubble" cx="44" cy="126" r="7" fill="#c9daf9"/>
+        <circle class="edu-bubble edu-bubble--2" cx="290" cy="160" r="9" fill="#d7e4fb"/>
+      </svg>
+    </div>
+  </section>
+
+  {% if graduate.size > 0 %}
+  <section class="teach-group">
+    <h2 class="teach-group__title">
+      <span class="teach-group__icon"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></span>
+      Graduate Research
+    </h2>
+    <div class="edu-list">
+      {% for item in graduate %}{% include research-card.html %}{% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if undergraduate.size > 0 %}
+  <section class="teach-group">
+    <h2 class="teach-group__title">
+      <span class="teach-group__icon"><i class="fa-solid fa-scroll" aria-hidden="true"></i></span>
+      Undergraduate Research
+    </h2>
+    <div class="edu-list">
+      {% for item in undergraduate %}{% include research-card.html %}{% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+</div>
+
+<script src="{{ base_path }}/assets/js/cards.js?v={{ site.time | date: '%s' }}" defer></script>

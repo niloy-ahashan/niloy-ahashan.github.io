@@ -152,31 +152,6 @@ redirect_from:
   </section>
 
   <section class="home-section">
-    <h2 class="teach-group__title"><span class="teach-group__icon"><i class="fa-solid fa-flask" aria-hidden="true"></i></span>Research Experience</h2>
-    <div class="home-roles home-roles--two">
-      <div class="home-role edu-reveal">
-        <span class="home-role__icon"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></span>
-        <div>
-          <h3>Graduate Research Assistant</h3>
-          <p>Department of Computer Science, University of Kentucky</p>
-          <p class="home-role__when"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>Fall 2024 &ndash; Summer 2025</p>
-          <p>Area of research: Federated Learning, Algorithm, Database, Networking</p>
-        </div>
-      </div>
-      <div class="home-role edu-reveal">
-        <span class="home-role__icon"><i class="fa-solid fa-lungs" aria-hidden="true"></i></span>
-        <div>
-          <h3>Undergraduate Thesis</h3>
-          <p>Department of Computer Science and Engineering, BRAC University</p>
-          <p class="home-role__when"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>May 2020 &ndash; June 2021</p>
-          <p><em>Comparative Study of X-ray and CT Scan Images for the Detection of COVID-19 using Deep Learning</em></p>
-          <p>Supervisor: Dr. Mohammad Zavid Parvez</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="home-section">
     <h2 class="teach-group__title"><span class="teach-group__icon"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span>Roles &amp; Service</h2>
     <div class="home-roles home-roles--two">
       <div class="home-role edu-reveal">
@@ -267,6 +242,20 @@ redirect_from:
           {% endfor %}
         </ul>
         <a class="home-sum__more" href="{{ base_path }}/education/">View education <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+
+      <div class="home-sum edu-reveal">
+        <div class="home-sum__head">
+          <span class="home-link__icon"><i class="fa-solid fa-flask" aria-hidden="true"></i></span>
+          <h3>Research</h3>
+        </div>
+        <ul>
+          {% assign research = site.research | sort: "date" | reverse %}
+          {% for r in research %}
+          <li><strong>{{ r.title }}</strong><span>{{ r.institution }} &middot; {{ r.period }}</span></li>
+          {% endfor %}
+        </ul>
+        <a class="home-sum__more" href="{{ base_path }}/research/">View research <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
       </div>
 
       <div class="home-sum edu-reveal">

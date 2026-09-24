@@ -4,8 +4,8 @@ Source for [niloy-ahashan.github.io](https://niloy-ahashan.github.io), the perso
 
 ## Structure
 
-- `_pages/` - homepage, education, publications, and teaching pages
-- `_education/`, `_publications/`, `_teaching/` - content collections rendered on their respective pages (one file per degree, paper, or role)
+- `_pages/` - homepage, education, research, publications, and teaching pages
+- `_education/`, `_research/`, `_publications/`, `_teaching/` - content collections rendered on their respective pages (one file per degree, research position, paper, or role)
 - `_data/navigation.yml` - top navigation links
 - `_config.yml` - site-wide settings (author info, social links, etc.)
 - `files/` - downloadable files (e.g. CV PDF)

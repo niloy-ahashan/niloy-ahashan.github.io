@@ -1,0 +1,36 @@
+{% comment %} One Research page card. Expects `item` (a _research document) and `base_path`. {% endcomment %}
+<article class="edu-card edu-reveal">
+  {% if item.dept_url %}
+  <a class="edu-card__go" href="{{ item.dept_url }}" aria-label="{{ item.department }}, {{ item.institution }}"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+  {% endif %}
+  <div class="edu-card__logo">
+    <img src="{{ base_path }}/images/logos/{{ item.logo }}" alt="{{ item.institution }} logo" width="80" height="80">
+  </div>
+  <div class="edu-card__body">
+    {% if item.current %}
+    <span class="edu-badge edu-badge--current"><span class="edu-badge__dot"></span>Current</span>
+    {% endif %}
+    <h3 class="edu-card__degree">{{ item.title }}</h3>
+    <span class="edu-card__school">{{ item.institution }}</span>
+    <ul class="edu-meta">
+      <li><i class="fa-solid fa-building-columns" aria-hidden="true"></i>{{ item.department }}</li>
+      <li><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>{{ item.period }}</li>
+      <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{{ item.location }}</li>
+    </ul>
+    {% if item.thesis_title %}
+    <p class="research-thesis"><i class="fa-solid fa-scroll" aria-hidden="true"></i><span><em>{{ item.thesis_title }}</em>{% if item.supervisor %}<span class="research-thesis__sup">Supervisor: {{ item.supervisor }}</span>{% endif %}</span></p>
+    {% endif %}
+    {% if item.areas %}
+    <div class="teach-courses">
+      <span class="teach-courses__label"><i class="fa-solid fa-flask" aria-hidden="true"></i>Research areas</span>
+      <ul>
+        {% for area in item.areas %}<li>{{ area }}</li>{% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+  <img class="edu-card__mark" src="{{ base_path }}/images/logos/{{ item.logo }}" alt="" aria-hidden="true">
+  {% if item.photo %}
+  <div class="edu-card__photo" aria-hidden="true"><img src="{{ base_path }}/images/campus/{{ item.photo }}" alt="" loading="lazy"{% if item.photo_position %} style="object-position: {{ item.photo_position }}"{% endif %}></div>
+  {% endif %}
+</article>

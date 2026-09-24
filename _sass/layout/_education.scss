@@ -605,6 +605,42 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   border-color: #c3d5f6;
 }
 
+/* Research page extras
+   ========================================================================== */
+
+.research-thesis {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55em;
+  margin: 0.55em 0 0;
+  font-size: 0.82em;
+  line-height: 1.5;
+  color: $edu-ink;
+
+  > i {
+    margin-top: 0.2em;
+    color: $edu-accent;
+  }
+}
+
+.research-thesis__sup {
+  display: block;
+  margin-top: 0.15em;
+  font-size: 0.9em;
+  color: $edu-muted;
+}
+
+.res-wave {
+  animation: res-wave 3s ease-in-out infinite alternate;
+}
+
+.res-bubble {
+  animation: res-rise 3.2s ease-in infinite;
+
+  &--2 { animation-delay: 1s; animation-duration: 2.6s; }
+  &--3 { animation-delay: 1.8s; animation-duration: 3.6s; }
+}
+
 /* Home page
    ========================================================================== */
 
@@ -896,7 +932,7 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   gap: 0.7em;
 
   @include breakpoint($medium) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -1038,6 +1074,17 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
 
 @keyframes home-spin {
   to { transform: rotate(360deg); }
+}
+
+@keyframes res-wave {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-40px); }
+}
+
+@keyframes res-rise {
+  0%   { transform: translateY(0); opacity: 0; }
+  15%  { opacity: 1; }
+  100% { transform: translateY(-60px); opacity: 0; }
 }
 
 @keyframes edu-ping {
