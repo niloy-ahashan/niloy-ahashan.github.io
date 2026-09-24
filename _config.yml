@@ -27,6 +27,7 @@ author:
   pronouns         : "He/Him"
   bio              : "PhD student in Computer Science, University of Kentucky."
   location         : "Kentucky, United States"
+  location_url     : "https://www.google.com/maps/search/?api=1&query=University+of+Kentucky,+Lexington,+KY"
   employer         : "University of Kentucky"
   employer_url     : "https://www.uky.edu/"
   uri              : # URL
