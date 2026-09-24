@@ -630,15 +630,16 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   color: $edu-muted;
 }
 
-.res-wave {
-  animation: res-wave 3s ease-in-out infinite alternate;
+.res-flow {
+  stroke-dasharray: 4 5;
+  animation: res-flow 1.6s linear infinite;
 }
 
-.res-bubble {
-  animation: res-rise 3.2s ease-in infinite;
+.res-node {
+  animation: res-node 2.4s ease-in-out infinite;
 
-  &--2 { animation-delay: 1s; animation-duration: 2.6s; }
-  &--3 { animation-delay: 1.8s; animation-duration: 3.6s; }
+  &--2 { animation-delay: 0.8s; }
+  &--3 { animation-delay: 1.6s; }
 }
 
 /* Home page
@@ -1076,15 +1077,13 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   to { transform: rotate(360deg); }
 }
 
-@keyframes res-wave {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-40px); }
+@keyframes res-flow {
+  to { stroke-dashoffset: -18; }
 }
 
-@keyframes res-rise {
-  0%   { transform: translateY(0); opacity: 0; }
-  15%  { opacity: 1; }
-  100% { transform: translateY(-60px); opacity: 0; }
+@keyframes res-node {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.45; }
 }
 
 @keyframes edu-ping {

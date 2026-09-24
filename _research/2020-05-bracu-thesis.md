@@ -10,6 +10,7 @@ dept_url: "https://cse.bracu.ac.bd/"
 location: "Dhaka, Bangladesh"
 logo: bracu.svg
 photo: bracu.jpg
-thesis_title: "Comparative Study of X-ray and CT Scan Images for the Detection of COVID-19 using Deep Learning"
+project_title: "Comparative Study of X-ray and CT Scan Images for the Detection of COVID-19 using Deep Learning"
 supervisor: "Dr. Mohammad Zavid Parvez"
+areas: ['Deep Learning', 'Biomedical Image Classification', 'COVID-19']
 ---

@@ -16,7 +16,7 @@ hide_title: true
   <section class="edu-hero">
     <div class="edu-hero__text">
       <h1 class="edu-hero__subtitle">Research Experience</h1>
-      <p class="edu-hero__intro">From an undergraduate thesis on deep learning for COVID-19 detection at BRAC University to graduate research on federated learning at the University of Kentucky.</p>
+      <p class="edu-hero__intro">From an undergraduate thesis on deep learning for COVID-19 detection at BRAC University to graduate research on communication-efficient multimodal federated learning at the University of Kentucky.</p>
     </div>
 
     <div class="edu-hero__art" aria-hidden="true">
@@ -26,52 +26,69 @@ hide_title: true
             <stop offset="0%" stop-color="#dbe7ff"/>
             <stop offset="100%" stop-color="#dbe7ff" stop-opacity="0"/>
           </radialGradient>
-          <linearGradient id="res-liquid" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#6d9bff"/>
-            <stop offset="100%" stop-color="#1f4fbf"/>
+          <linearGradient id="res-screen" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1b3f9e"/>
+            <stop offset="100%" stop-color="#0f2a6b"/>
           </linearGradient>
-          <clipPath id="res-flask-clip">
-            <path d="M136 60h28v44l38 72c5 10-2 20-13 20h-78c-11 0-18-10-13-20l38-72z"/>
-          </clipPath>
         </defs>
 
-        <circle cx="160" cy="125" r="112" fill="url(#res-halo)"/>
+        <circle cx="160" cy="120" r="112" fill="url(#res-halo)"/>
 
-        <ellipse cx="160" cy="200" rx="140" ry="24" fill="none" stroke="#9dbcf5" stroke-width="1.5" stroke-dasharray="3 7"/>
+        <ellipse cx="160" cy="196" rx="140" ry="26" fill="none" stroke="#9dbcf5" stroke-width="1.5" stroke-dasharray="3 7"/>
         <circle r="4.5" fill="#4f7fe8">
-          <animateMotion dur="9s" repeatCount="indefinite" path="M20,200 a140,24 0 1,0 280,0 a140,24 0 1,0 -280,0"/>
+          <animateMotion dur="9s" repeatCount="indefinite" path="M20,196 a140,26 0 1,0 280,0 a140,26 0 1,0 -280,0"/>
         </circle>
 
         <g class="edu-float">
-          <!-- small neural network beside the flask -->
-          <g stroke="#9dbcf5" stroke-width="1.5">
-            <path d="M232 70l30 18M232 70l30 44M232 106l30-18M232 106l30 8M262 88l24 13M262 114l24-13"/>
-          </g>
-          <g fill="#fff" stroke="#1f4fbf" stroke-width="2.5">
-            <circle cx="232" cy="70" r="6"/><circle cx="232" cy="106" r="6"/>
-            <circle cx="262" cy="88" r="6"/><circle cx="262" cy="114" r="6"/>
-            <circle cx="286" cy="101" r="6" fill="#f2b632" stroke="#c98a00"/>
-          </g>
+          <!-- laptop -->
+          <rect x="68" y="44" width="184" height="116" rx="9" fill="#0f2a6b"/>
+          <rect x="76" y="52" width="168" height="100" rx="4" fill="url(#res-screen)"/>
+          <path d="M52 160h216l-12 16H64z" fill="#1f4fbf"/>
+          <rect x="140" y="161" width="40" height="4" rx="2" fill="#0f2a6b"/>
 
-          <!-- flask -->
-          <g clip-path="url(#res-flask-clip)">
-            <rect x="80" y="130" width="160" height="80" fill="url(#res-liquid)"/>
-            <path class="res-wave" d="M80 132 q20 -8 40 0 t40 0 t40 0 t40 0 t40 0 v20 h-200z" fill="#9dbcf5" opacity="0.7"/>
-            <circle class="res-bubble" cx="140" cy="186" r="4" fill="#e8f0ff"/>
-            <circle class="res-bubble res-bubble--2" cx="162" cy="190" r="3" fill="#e8f0ff"/>
-            <circle class="res-bubble res-bubble--3" cx="178" cy="184" r="5" fill="#e8f0ff"/>
+          <!-- neural network on screen: 3 inputs, 4 hidden, 2 outputs -->
+          <g class="res-flow" stroke="#6d9bff" stroke-width="1.3" fill="none">
+            <path d="M112 74L160 66M112 74L160 90M112 74L160 114M112 74L160 138
+                     M112 102L160 66M112 102L160 90M112 102L160 114M112 102L160 138
+                     M112 130L160 66M112 130L160 90M112 130L160 114M112 130L160 138
+                     M160 66L208 90M160 90L208 90M160 114L208 90M160 138L208 90
+                     M160 66L208 114M160 90L208 114M160 114L208 114M160 138L208 114"/>
           </g>
-          <path d="M136 60h28v44l38 72c5 10-2 20-13 20h-78c-11 0-18-10-13-20l38-72z" fill="none" stroke="#0f2a6b" stroke-width="5" stroke-linejoin="round"/>
-          <rect x="128" y="52" width="44" height="10" rx="4" fill="#0f2a6b"/>
+          <g fill="#e8f0ff">
+            <circle class="res-node" cx="112" cy="74" r="5.5"/>
+            <circle class="res-node res-node--2" cx="112" cy="102" r="5.5"/>
+            <circle class="res-node res-node--3" cx="112" cy="130" r="5.5"/>
+            <circle class="res-node res-node--2" cx="160" cy="66" r="5.5"/>
+            <circle class="res-node res-node--3" cx="160" cy="90" r="5.5"/>
+            <circle class="res-node" cx="160" cy="114" r="5.5"/>
+            <circle class="res-node res-node--2" cx="160" cy="138" r="5.5"/>
+          </g>
+          <g fill="#f2b632">
+            <circle class="res-node res-node--3" cx="208" cy="90" r="6"/>
+            <circle class="res-node" cx="208" cy="114" r="6"/>
+          </g>
+        </g>
+
+        <!-- microchip -->
+        <g class="edu-bubble edu-bubble--2">
+          <g stroke="#1f4fbf" stroke-width="2.5" stroke-linecap="round">
+            <path d="M262 22v-6M272 22v-6M282 22v-6M262 58v6M272 58v6M282 58v6M254 30h-6M254 40h-6M254 50h-6M290 30h6M290 40h6M290 50h6"/>
+          </g>
+          <rect x="254" y="22" width="36" height="36" rx="6" fill="#1f4fbf"/>
+          <rect x="263" y="31" width="18" height="18" rx="3" fill="none" stroke="#e8f0ff" stroke-width="2"/>
+        </g>
+
+        <!-- code badge -->
+        <g class="edu-bubble">
+          <rect x="22" y="140" width="50" height="32" rx="9" fill="#ffffff" stroke="#c9d7f3" stroke-width="2"/>
+          <path d="M38 149l-7 7 7 7M56 149l7 7-7 7M50 147l-6 18" stroke="#1f4fbf" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         </g>
 
         <g fill="#f2b632">
-          <path class="edu-spark" d="M56 70l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
-          <path class="edu-spark edu-spark--2" d="M206 40l2.2 6 6 2.2-6 2.2-2.2 6-2.2-6-6-2.2 6-2.2z"/>
-          <path class="edu-spark edu-spark--3" d="M70 170l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/>
+          <path class="edu-spark" d="M44 64l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
+          <path class="edu-spark edu-spark--2" d="M226 22l2.2 6 6 2.2-6 2.2-2.2 6-2.2-6-6-2.2 6-2.2z"/>
+          <path class="edu-spark edu-spark--3" d="M286 150l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/>
         </g>
-        <circle class="edu-bubble" cx="44" cy="126" r="7" fill="#c9daf9"/>
-        <circle class="edu-bubble edu-bubble--2" cx="290" cy="160" r="9" fill="#d7e4fb"/>
       </svg>
     </div>
   </section>
@@ -91,7 +108,7 @@ hide_title: true
   {% if undergraduate.size > 0 %}
   <section class="teach-group">
     <h2 class="teach-group__title">
-      <span class="teach-group__icon"><i class="fa-solid fa-scroll" aria-hidden="true"></i></span>
+      <span class="teach-group__icon"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></span>
       Undergraduate Research
     </h2>
     <div class="edu-list">
