@@ -88,6 +88,7 @@ Honors and Awards
 
 Service and leadership
 ======
+* GSC Representative, Association for Data and Computation (ADC), University of Kentucky
 * Journal Reviewer, Frontiers in Signal Processing - Biomedical Signal Processing (Science and Technology)
 
 See also my [BRAC University faculty profile](https://cse.bracu.ac.bd/faculty_profile/94/ahashan_habib_niloy).

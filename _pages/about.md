@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a PhD student in the Department of Computer Science at the University of Kentucky, where I have been a Graduate Teaching Assistant since Fall 2025 and was previously a Graduate Research Assistant (Fall 2024 - Summer 2025) working on federated learning, algorithms, databases, and networking.
+I am a PhD student in the Department of Computer Science at the University of Kentucky, where I have been a Graduate Teaching Assistant since Fall 2025 and was previously a Graduate Research Assistant (Fall 2024 - Summer 2025) working on federated learning, algorithms, databases, and networking. I also serve as the GSC Representative for the Association for Data and Computation (ADC) at UK.
 
 Before starting my PhD, I was a Lecturer (and previously Part-Time and Undergraduate Teaching Assistant) in the Department of Computer Science and Engineering at BRAC University in Dhaka, Bangladesh, where I taught courses including Programming Language I, Data Structures, Digital Logic Design, and Database Systems. I completed my B.Sc. in Computer Science and Engineering at BRAC University in 2021, graduating with the highest distinction.
 
