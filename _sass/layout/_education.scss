@@ -1244,7 +1244,7 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   }
 }
 
-/* Justified paragraphs with a first-line indent
+/* Justified paragraphs
    Applies to running text: page intros, the About Me panel, abstracts,
    and the text on individual publication/teaching pages. Short labels,
    notes, and card details are left alone.
@@ -1256,7 +1256,6 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
 .home-fun p,
 .page__content p {
   text-align: justify;
-  text-indent: 1.5em;
   -webkit-hyphens: auto;
           hyphens: auto;
 }
