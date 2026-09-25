@@ -24,14 +24,25 @@ body { margin: 0; }
 
 /* Selected elements */
 
+/* light blue in the light theme, a deeper blue in the dark theme */
 ::-moz-selection {
-  color: #fff;
-  background: #000;
+  color: #0f2a6b;
+  background: #cfe0ff;
 }
 
 ::selection {
-  color: #fff;
-  background: #000;
+  color: #0f2a6b;
+  background: #cfe0ff;
+}
+
+html[data-theme="dark"] ::-moz-selection {
+  color: #ffffff;
+  background: #2f5fd0;
+}
+
+html[data-theme="dark"] ::selection {
+  color: #ffffff;
+  background: #2f5fd0;
 }
 
 /* Display HTML5 elements in IE6-9 and FF3 */
