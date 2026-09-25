@@ -89,7 +89,12 @@ hide_title: true
       </div>
       <div class="edu-card__body">
         <span class="edu-badge pub-badge--{{ pub_mod }}"><i class="fa-solid {{ pub_icon }}" aria-hidden="true"></i>{{ pub_type }}</span>
+        {% assign abstract_id = "abstract-" | append: post.slug %}
+        {% if post.abstract %}
+        <h2 class="edu-card__degree pub-title"><button type="button" class="pub-title__toggle" data-abstract-toggle aria-expanded="false" aria-controls="{{ abstract_id }}">{{ post.title }}<i class="fa-solid fa-chevron-down pub-title__chev" aria-hidden="true"></i></button></h2>
+        {% else %}
         <h2 class="edu-card__degree pub-title"><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></h2>
+        {% endif %}
         <span class="edu-card__school pub-venue">{{ post.venue_short | default: post.venue }}</span>
         <ul class="edu-meta">
           <li><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>{{ post.date | date: "%B %Y" }}</li>
@@ -97,9 +102,20 @@ hide_title: true
           <li class="pub-authors"><i class="fa-solid fa-user-group" aria-hidden="true"></i><span>{{ post.authors | replace: "Niloy, A.H.", "<strong>Niloy, A.H.</strong>" }}</span></li>
           {% endif %}
         </ul>
+        {% if post.abstract %}
+        <div class="pub-abstract" id="{{ abstract_id }}" role="region" aria-label="Abstract of {{ post.title | escape }}">
+          <div class="pub-abstract__inner">
+            <p class="pub-abstract__label"><i class="fa-solid fa-align-left" aria-hidden="true"></i>Abstract</p>
+            <p class="pub-abstract__text">{{ post.abstract }}</p>
+          </div>
+        </div>
+        {% endif %}
         <div class="pub-actions">
           {% if post.paperurl %}
           <a class="pub-btn pub-btn--primary" href="{{ post.paperurl }}"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>Read paper</a>
+          {% endif %}
+          {% if post.abstract %}
+          <button type="button" class="pub-btn pub-btn--abstract" data-abstract-toggle aria-expanded="false" aria-controls="{{ abstract_id }}"><i class="fa-solid fa-align-left" aria-hidden="true"></i><span class="pub-btn__show">Abstract</span><span class="pub-btn__hide">Hide abstract</span></button>
           {% endif %}
           {% if post.citation %}
           <button type="button" class="pub-btn" data-cite="{{ cite_text }}"><i class="fa-solid fa-quote-left" aria-hidden="true"></i><span class="pub-btn__label">Cite</span><span class="pub-btn__done">Copied!</span></button>

@@ -19,6 +19,18 @@
     });
   });
 
+  /* Publications: open/close a paper's abstract inside its card */
+  Array.prototype.forEach.call(root.querySelectorAll('[data-abstract-toggle]'), function (btn) {
+    btn.addEventListener('click', function () {
+      var card = btn.closest('.edu-card');
+      var open = !card.classList.contains('is-open');
+      card.classList.toggle('is-open', open);
+      Array.prototype.forEach.call(card.querySelectorAll('[data-abstract-toggle]'), function (t) {
+        t.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    });
+  });
+
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduceMotion) {
     var svg = root.querySelector('.edu-hero__svg');
