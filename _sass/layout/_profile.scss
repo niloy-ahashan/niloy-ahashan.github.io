@@ -60,6 +60,60 @@ $profile-ease  : cubic-bezier(0.22, 1, 0.36, 1);
   color: var(--edu-muted);
 }
 
+.sidebar .author__bio-icon {
+  margin-right: 0.35em;
+  color: var(--edu-accent);
+}
+
+/* On large screens the bio becomes a small tinted card with an accent bar */
+@include breakpoint($large) {
+  .sidebar .author__bio {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6em;
+    padding: 0.6em 0.75em 0.6em 0.85em;
+    border: 1px solid var(--edu-line);
+    border-radius: 12px;
+    background: var(--edu-tint);
+    color: var(--edu-text);
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--edu-accent);
+      transition: background 0.4s ease, width 0.4s $profile-ease;
+    }
+
+    &:hover {
+      border-color: var(--edu-line-strong);
+      box-shadow: 0 8px 18px -14px rgba($profile-blue, 0.7);
+
+      &::before {
+        width: 4px;
+        background: linear-gradient(180deg, $profile-blue, $profile-light, $profile-gold);
+      }
+
+      .author__bio-icon { transform: rotate(-14deg) translateY(-1px); }
+    }
+  }
+
+  .sidebar .author__bio-icon {
+    flex: none;
+    margin-top: 0.2em;
+    margin-right: 0;
+    color: var(--edu-accent);
+    transform-origin: 30% 80%;
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+}
+
 /* Link list
    ========================================================================== */
 
