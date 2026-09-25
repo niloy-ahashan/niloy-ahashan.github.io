@@ -8,20 +8,17 @@
 
   {% assign avatar_src = author.avatar %}
   {% unless author.avatar contains "://" %}{% assign avatar_src = author.avatar | prepend: "/images/" | prepend: base_path %}{% endunless %}
-  {% if page.url == "/" %}
+  {% comment %} Ring on hover everywhere; the wave and "Hi" bubble only on the homepage {% endcomment %}
   <div class="author__avatar author__avatar--hello">
     <span class="avatar-hello">
       <span class="avatar-hello__ring" aria-hidden="true"></span>
       <img src="{{ avatar_src }}" class="author__avatar" alt="{{ author.name }}">
+      {% if page.url == "/" %}
       <span class="avatar-hello__wave" aria-hidden="true">👋</span>
       <span class="avatar-hello__bubble" aria-hidden="true">Hi, I'm Niloy!</span>
+      {% endif %}
     </span>
   </div>
-  {% else %}
-  <div class="author__avatar">
-    <img src="{{ avatar_src }}" class="author__avatar" alt="{{ author.name }}">
-  </div>
-  {% endif %}
 
   <div class="author__content">
     <h3 class="author__name">{{ author.name }}</h3>
