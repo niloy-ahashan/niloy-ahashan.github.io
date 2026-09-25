@@ -1243,3 +1243,20 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
     transform: none;
   }
 }
+
+/* Justified paragraphs with a first-line indent
+   Applies to running text: page intros, the About Me panel, abstracts,
+   and the text on individual publication/teaching pages. Short labels,
+   notes, and card details are left alone.
+   ========================================================================== */
+
+.edu-hero__intro,
+.home-panel p:not(.home-panel__links):not(.home-panel__note),
+.pub-abstract__text,
+.home-fun p,
+.page__content p {
+  text-align: justify;
+  text-indent: 1.5em;
+  -webkit-hyphens: auto;
+          hyphens: auto;
+}
