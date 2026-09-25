@@ -138,7 +138,13 @@ html[data-theme="dark"] {
   padding: 0.4rem 0.85rem;
   border-radius: 999px;
   overflow: hidden;
-  transition: transform 0.35s $brand-ease, color 0.25s ease;
+  transition: color 0.25s ease;
+
+  /* only the text and pill move, never the link's hover area; moving the
+     link itself made it slide out from under the cursor and flicker */
+  .nav-link__text {
+    transition: transform 0.35s $brand-ease;
+  }
 
   /* pill behind the text */
   &::after {
@@ -168,8 +174,8 @@ html[data-theme="dark"] {
   &:hover,
   &:focus-visible {
     color: var(--nav-text-hover);
-    transform: translateY(-2px);
 
+    .nav-link__text { transform: translateY(-2px); }
     &::after { opacity: 1; transform: scale(1); }
   }
 
@@ -179,8 +185,12 @@ html[data-theme="dark"] {
   }
 
   &:active {
-    transform: translateY(0) scale(0.94);
-    transition-duration: 0.1s;
+    .nav-link__text {
+      transform: scale(0.94);
+      transition-duration: 0.1s;
+    }
+
+    &::after { transform: scale(0.94); }
   }
 
   &.is-active {
@@ -229,7 +239,7 @@ html[data-theme="dark"] {
     transition: none;
   }
 
-  .greedy-nav .visible-links a.nav-link:hover { transform: none; }
+  .greedy-nav .visible-links a.nav-link:hover .nav-link__text { transform: none; }
 }
 
 /* ==========================================================================

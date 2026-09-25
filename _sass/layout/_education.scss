@@ -161,7 +161,7 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   &:hover {
-    transform: translateY(-6px);
+    transform: scale(1.012);
     border-color: var(--edu-line-strong);
     box-shadow: 0 22px 44px -22px rgba($edu-accent-deep, 0.45);
 
@@ -389,7 +389,7 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   &.is-visible:hover {
-    transform: translateY(-6px);
+    transform: scale(1.012);
   }
 }
 
@@ -397,6 +397,7 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
    ========================================================================== */
 
 .pub-scholar {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
@@ -1052,6 +1053,35 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   color: #fff;
 
   i { animation: home-spin 6s linear infinite; }
+}
+
+/* Hover lift without flicker
+   Elements that rise on hover would slide out from under a cursor resting
+   near their bottom edge, lose hover, drop back, and repeat. While lifted,
+   an invisible strip fills the gap below so the cursor stays inside.
+   ========================================================================== */
+
+.home-stat,
+.home-role,
+.home-sum,
+.home-awards li,
+.teach-courses li {
+  position: relative;
+}
+
+.home-stat:hover::after,
+.home-role:hover::after,
+.home-sum:hover::after,
+.home-awards li:hover::after,
+.teach-courses li:hover::after,
+.pub-btn:hover::after,
+.pub-scholar:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 8px;
 }
 
 /* Keyframes
