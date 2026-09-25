@@ -6,13 +6,22 @@
 
 <div itemscope itemtype="http://schema.org/Person">
 
-  <div class="author__avatar">
-    {% if author.avatar contains "://" %}
-    	<img src="{{ author.avatar }}" alt="{{ author.name }}">
-    {% else %}
-    	<img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}">
-    {% endif %}
+  {% assign avatar_src = author.avatar %}
+  {% unless author.avatar contains "://" %}{% assign avatar_src = author.avatar | prepend: "/images/" | prepend: base_path %}{% endunless %}
+  {% if page.url == "/" %}
+  <div class="author__avatar author__avatar--hello">
+    <span class="avatar-hello">
+      <span class="avatar-hello__ring" aria-hidden="true"></span>
+      <img src="{{ avatar_src }}" class="author__avatar" alt="{{ author.name }}">
+      <span class="avatar-hello__wave" aria-hidden="true">👋</span>
+      <span class="avatar-hello__bubble" aria-hidden="true">Hi, I'm Niloy!</span>
+    </span>
   </div>
+  {% else %}
+  <div class="author__avatar">
+    <img src="{{ avatar_src }}" class="author__avatar" alt="{{ author.name }}">
+  </div>
+  {% endif %}
 
   <div class="author__content">
     <h3 class="author__name">{{ author.name }}</h3>
