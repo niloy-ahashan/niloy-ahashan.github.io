@@ -190,3 +190,26 @@ $profile-ease  : cubic-bezier(0.22, 1, 0.36, 1);
     transition: none;
   }
 }
+
+/* Fixed sidebar vs. footer
+   From 1024px the sidebar is fixed, so at the bottom of a page the footer
+   scrolled over its last links. The sidebar lives inside #main, which the
+   theme animates in, so #main is its own stacking layer and no z-index on
+   the sidebar can lift it above the later footer. Instead the footer goes
+   behind (z-index -1), the sidebar paints the page background below the
+   masthead, and nav.js pads the footer text to start right of the sidebar.
+   The sidebar also stops at the bottom of the window (it starts 2em down
+   via .sticky), so its own scrollbar can reach the last link.
+   ========================================================================== */
+
+@media screen and (min-width: $sidebar-screen-min-width) {
+  .page__footer {
+    z-index: -1;
+  }
+
+  .sidebar {
+    height: calc(100vh - 2em);
+    background-color: var(--global-bg-color);
+    background-clip: content-box;
+  }
+}

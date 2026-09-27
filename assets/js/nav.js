@@ -17,3 +17,22 @@
     ripple.addEventListener('animationend', function () { ripple.remove(); });
   });
 })();
+
+/* Footer: from 1024px the sidebar is fixed on the left, so start the
+   footer text to its right instead of underneath it. */
+(function () {
+  var footer = document.querySelector('.page__footer footer');
+  var sidebar = document.querySelector('.sidebar');
+  if (!footer || !sidebar) return;
+
+  function place() {
+    footer.style.paddingLeft = '';
+    if (window.innerWidth < 1024) return;
+    var gap = sidebar.getBoundingClientRect().right - footer.getBoundingClientRect().left;
+    if (gap > 0) footer.style.paddingLeft = Math.ceil(gap + 24) + 'px';
+  }
+
+  place();
+  window.addEventListener('resize', place);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(place);
+})();
