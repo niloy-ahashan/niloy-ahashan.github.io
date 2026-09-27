@@ -304,8 +304,10 @@ html[data-theme="dark"] {
   .avatar-hello__bubble {
     display: block;
     position: absolute;
-    top: -13%;
+    bottom: 91%;
     right: -26px;
+    width: max-content;
+    max-width: 160px;
     z-index: 3;
     padding: 0.35em 0.8em;
     border: 1px solid var(--edu-line-strong);
@@ -313,9 +315,10 @@ html[data-theme="dark"] {
     background: var(--edu-surface);
     box-shadow: 0 10px 22px -12px rgba($brand-deep, 0.55);
     font-family: "Nunito", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.76rem;
     font-weight: 800;
-    white-space: nowrap;
+    line-height: 1.25;
+    text-align: center;
     color: var(--nav-text-hover);
     opacity: 0;
     transform: translateY(8px) scale(0.85);
