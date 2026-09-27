@@ -14,9 +14,6 @@ redirect_from:
 
 {% include base_path %}
 
-{% assign all_courses = "" | split: "" %}
-{% for role in site.teaching %}{% if role.courses %}{% assign all_courses = all_courses | concat: role.courses %}{% endif %}{% endfor %}
-{% assign all_courses = all_courses | uniq %}
 
 <div class="edu home">
 
@@ -28,10 +25,6 @@ redirect_from:
       <p class="edu-hero__intro">I work on federated learning, and I teach computer science. I'm a Graduate Teaching Assistant at the University of Kentucky and was previously a Lecturer at BRAC University.</p>
       <div class="home-cta">
         <a class="pub-btn pub-btn--primary" href="{{ base_path }}/files/CV_Ahashan_Habib_Niloy.pdf"><i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>Download CV</a>
-        <a class="pub-btn" href="{{ base_path }}/publications/"><i class="fa-solid fa-book-open" aria-hidden="true"></i>Publications</a>
-        {% if site.author.googlescholar %}
-        <a class="pub-btn" href="{{ site.author.googlescholar }}"><i class="ai ai-google-scholar" aria-hidden="true"></i>Google Scholar</a>
-        {% endif %}
       </div>
     </div>
 
@@ -104,45 +97,20 @@ redirect_from:
     </div>
   </section>
 
-  <section class="home-stats" aria-label="At a glance">
-    <div class="home-stat edu-reveal">
-      <span class="home-stat__icon"><i class="fa-solid fa-book-open" aria-hidden="true"></i></span>
-      <span class="home-stat__num" data-count="{{ site.publications.size }}">{{ site.publications.size }}</span>
-      <span class="home-stat__label">Publications</span>
-    </div>
-    <div class="home-stat edu-reveal">
-      <span class="home-stat__icon"><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i></span>
-      <span class="home-stat__num" data-count="{{ site.teaching.size }}">{{ site.teaching.size }}</span>
-      <span class="home-stat__label">Teaching roles</span>
-    </div>
-    <div class="home-stat edu-reveal">
-      <span class="home-stat__icon"><i class="fa-solid fa-book" aria-hidden="true"></i></span>
-      <span class="home-stat__num" data-count="{{ all_courses.size }}">{{ all_courses.size }}</span>
-      <span class="home-stat__label">Courses</span>
-    </div>
-    <div class="home-stat edu-reveal">
-      <span class="home-stat__icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>
-      <span class="home-stat__num" data-count="{{ site.education.size }}">{{ site.education.size }}</span>
-      <span class="home-stat__label">Degrees</span>
-    </div>
-  </section>
-
   <section class="home-section">
     <h2 class="teach-group__title"><span class="teach-group__icon"><i class="fa-solid fa-user" aria-hidden="true"></i></span>About Me</h2>
     <div class="home-panel edu-reveal">
-      <p>I am a PhD student in the Department of Computer Science at the University of Kentucky, where I have been a Graduate Teaching Assistant since Fall 2025 and was previously a Graduate Research Assistant (Fall 2024 - Summer 2025) working on federated learning, algorithms, databases, and networking. I also serve as the GSC Representative for the Association for Data and Computation (ADC) and as Sports Officer for the Bangladeshi Student Association at the University of Kentucky (BSAUK).</p>
+      <p>I am a PhD student in the Department of Computer Science at the University of Kentucky, where I have been a Graduate Teaching Assistant since Fall 2025 and was previously a Graduate Research Assistant (Fall 2024 - Summer 2025) working on federated learning, algorithms, databases, and networking. In 2025, I also served as the GSC Representative for the Association for Data and Computation (ADC) and as Sports Officer for the Bangladeshi Student Association at the University of Kentucky (BSAUK).</p>
       <p>Before starting my PhD, I was a Lecturer (and previously Adjunct Lecturer and Undergraduate Teaching Assistant) in the Department of Computer Science and Engineering at BRAC University in Dhaka, Bangladesh, where I taught courses including Programming Language I, Data Structures, Digital Logic Design, and Database Systems. I completed my B.Sc. in Computer Science and Engineering at BRAC University in 2021, graduating with the highest distinction.</p>
       <p>My undergraduate thesis and subsequent publications focused on deep learning approaches for COVID-19 detection from chest X-ray and CT scan imaging.</p>
 
       <div class="teach-courses home-interests">
         <span class="teach-courses__label"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i>Research interests</span>
         <ul>
-          <li>Machine Learning</li>
-          <li>Deep Learning</li>
-          <li>Biomedical Image Processing</li>
-          <li>Human-Computer Interaction</li>
-          <li>Cybersecurity</li>
-          <li>Software Engineering</li>
+          <li>Multimodal AI</li>
+          <li>Federated Learning</li>
+          <li>Edge AI</li>
+          <li>Compression Algorithms</li>
         </ul>
       </div>
 
@@ -160,6 +128,7 @@ redirect_from:
         <div>
           <h3>Graduate Teaching Assistant</h3>
           <p>Department of Computer Science, University of Kentucky</p>
+          <p class="home-role__when"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>Fall 2025 &ndash; Present</p>
         </div>
       </div>
       <div class="home-role edu-reveal">
@@ -167,6 +136,7 @@ redirect_from:
         <div>
           <h3>GSC Representative</h3>
           <p>Association for Data and Computation (ADC), University of Kentucky</p>
+          <p class="home-role__when"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>2025</p>
         </div>
       </div>
       <div class="home-role edu-reveal">
@@ -174,15 +144,30 @@ redirect_from:
         <div>
           <h3>Sports Officer</h3>
           <p>Bangladeshi Student Association at the University of Kentucky (BSAUK)</p>
+          <p class="home-role__when"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>2025</p>
         </div>
       </div>
-      <div class="home-role edu-reveal">
-        <span class="home-role__icon"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></span>
-        <div>
-          <h3>Journal Reviewer</h3>
-          <p>Frontiers in Signal Processing &ndash; Biomedical Signal Processing (Science and Technology)</p>
+    </div>
+  </section>
+
+  <section class="home-section">
+    <h2 class="teach-group__title"><span class="teach-group__icon"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></span>Peer Review</h2>
+    <div class="edu-list">
+      <article class="edu-card edu-reveal">
+        <a class="edu-card__go" href="https://www.frontiersin.org/journals/signal-processing" aria-label="Frontiers in Signal Processing"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+        <div class="edu-card__logo">
+          <img src="{{ base_path }}/images/logos/frontiers.svg" alt="Frontiers logo" width="80" height="80">
         </div>
-      </div>
+        <div class="edu-card__body">
+          <h3 class="edu-card__degree">Journal Reviewer</h3>
+          <span class="edu-card__school">Frontiers in Signal Processing</span>
+          <ul class="edu-meta">
+            <li><i class="fa-solid fa-layer-group" aria-hidden="true"></i>Biomedical Signal Processing</li>
+            <li><i class="fa-solid fa-flask" aria-hidden="true"></i>Science and Technology</li>
+          </ul>
+        </div>
+        <img class="edu-card__mark" src="{{ base_path }}/images/logos/frontiers.svg" alt="" aria-hidden="true">
+      </article>
     </div>
   </section>
 
@@ -191,39 +176,44 @@ redirect_from:
     <ul class="home-awards">
       <li class="edu-reveal"><i class="fa-solid fa-medal" aria-hidden="true"></i><span>Graduated with the Highest Distinction from BRAC University</span><span class="home-awards__year">2021</span></li>
       <li class="edu-reveal"><i class="fa-solid fa-award" aria-hidden="true"></i><span>Performance-Based Scholarship (70%) at BRAC University for four consecutive years</span><span class="home-awards__year">2017&ndash;2021</span></li>
-      <li class="edu-reveal"><i class="fa-solid fa-star" aria-hidden="true"></i><span>Vice Chancellor's Honor List, 8 times, BRAC University</span></li>
-      <li class="edu-reveal"><i class="fa-solid fa-star" aria-hidden="true"></i><span>Dean's Honor List, 2 times, BRAC University</span></li>
+      <li class="edu-reveal"><i class="fa-solid fa-star" aria-hidden="true"></i><span>Vice Chancellor's Honor List, 8 times, BRAC University</span><span class="home-awards__year">2021</span></li>
+      <li class="edu-reveal"><i class="fa-solid fa-star" aria-hidden="true"></i><span>Dean's Honor List, 2 times, BRAC University</span><span class="home-awards__year">2021</span></li>
       <li class="edu-reveal"><i class="fa-solid fa-medal" aria-hidden="true"></i><span>Bronze Standard, The Duke of Edinburgh's International Award</span><span class="home-awards__year">2017</span></li>
       <li class="edu-reveal"><i class="fa-solid fa-ranking-star" aria-hidden="true"></i><span>Secured 8th Position in Dinajpur Education Board in Higher Secondary Certificate and awarded the Talent Pool Scholarship</span><span class="home-awards__year">2016</span></li>
-      <li class="edu-reveal"><i class="fa-solid fa-award" aria-hidden="true"></i><span>Government Scholarship, Class 8</span></li>
-      <li class="edu-reveal"><i class="fa-solid fa-award" aria-hidden="true"></i><span>Government Scholarship, Class 5</span></li>
     </ul>
   </section>
 
   <section class="home-section">
-    <h2 class="teach-group__title"><span class="teach-group__icon"><i class="fa-solid fa-code" aria-hidden="true"></i></span>Skills &amp; Languages</h2>
+    <h2 class="teach-group__title"><span class="teach-group__icon"><i class="fa-solid fa-code" aria-hidden="true"></i></span>Skills</h2>
     <div class="home-panel edu-reveal">
       <div class="teach-courses home-skill">
-        <span class="teach-courses__label"><i class="fa-solid fa-terminal" aria-hidden="true"></i>Programming Languages</span>
+        <span class="teach-courses__label"><i class="fa-solid fa-brain" aria-hidden="true"></i>Research Methods</span>
+        <ul><li>Federated Learning</li><li>Multimodal Learning</li><li>Model Compression</li><li>Quantization &amp; Pruning</li><li>Knowledge Distillation</li><li>Communication-Efficient Training</li><li>On-Device Inference</li></ul>
+      </div>
+      <div class="teach-courses home-skill">
+        <span class="teach-courses__label"><i class="fa-solid fa-network-wired" aria-hidden="true"></i>ML Frameworks</span>
+        <ul><li>PyTorch</li><li>TensorFlow</li><li>Keras</li><li>Scikit-learn</li><li>Hugging Face Transformers</li><li>Flower</li></ul>
+      </div>
+      <div class="teach-courses home-skill">
+        <span class="teach-courses__label"><i class="fa-solid fa-microchip" aria-hidden="true"></i>Edge &amp; Deployment</span>
+        <ul><li>ONNX</li><li>TensorFlow Lite</li><li>Docker</li><li>Linux</li><li>CUDA</li></ul>
+      </div>
+      <div class="teach-courses home-skill">
+        <span class="teach-courses__label"><i class="fa-solid fa-terminal" aria-hidden="true"></i>Programming</span>
         <ul><li>Python</li><li>Java</li><li>SQL</li></ul>
       </div>
       <div class="teach-courses home-skill">
-        <span class="teach-courses__label"><i class="fa-brands fa-python" aria-hidden="true"></i>Python Libraries</span>
-        <ul><li>PyTorch</li><li>Pandas</li><li>NumPy</li><li>Scikit-learn</li><li>Matplotlib</li><li>TensorFlow</li><li>Keras</li></ul>
+        <span class="teach-courses__label"><i class="fa-brands fa-python" aria-hidden="true"></i>Data &amp; Visualization</span>
+        <ul><li>NumPy</li><li>Pandas</li><li>Matplotlib</li></ul>
       </div>
       <div class="teach-courses home-skill">
         <span class="teach-courses__label"><i class="fa-solid fa-globe" aria-hidden="true"></i>Web Programming</span>
         <ul><li>MySQL</li><li>HTML5</li><li>CSS3</li><li>JavaScript</li></ul>
       </div>
       <div class="teach-courses home-skill">
-        <span class="teach-courses__label"><i class="fa-solid fa-pen-nib" aria-hidden="true"></i>Report Writing</span>
-        <ul><li>LaTeX</li></ul>
+        <span class="teach-courses__label"><i class="fa-solid fa-pen-nib" aria-hidden="true"></i>Tools</span>
+        <ul><li>LaTeX</li><li>Git</li></ul>
       </div>
-      <div class="teach-courses home-skill">
-        <span class="teach-courses__label"><i class="fa-solid fa-language" aria-hidden="true"></i>Languages</span>
-        <ul><li>Bangla &middot; Fluent</li><li>English &middot; Fluent</li></ul>
-      </div>
-      <p class="home-panel__note">Fluent in speaking, writing, reading, and listening in both languages.</p>
     </div>
   </section>
 

@@ -799,60 +799,6 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   animation: home-pulse 2.4s ease-out infinite;
 }
 
-.home-stats {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.7em;
-  margin-bottom: 1.4em;
-
-  @include breakpoint($medium) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.home-stat {
-  display: grid;
-  justify-items: center;
-  gap: 0.15em;
-  padding: 0.9em 0.5em 0.8em;
-  border: 1px solid var(--edu-line);
-  border-radius: 16px;
-  background: var(--edu-surface);
-  box-shadow: 0 10px 26px -20px rgba($edu-accent-deep, 0.45);
-  text-align: center;
-  transition: transform 0.45s $edu-ease, box-shadow 0.45s $edu-ease;
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 18px 34px -22px rgba($edu-accent-deep, 0.55);
-  }
-}
-
-.home-stat__icon {
-  display: grid;
-  place-items: center;
-  width: 2.1em;
-  height: 2.1em;
-  border-radius: 12px;
-  background: var(--edu-tint);
-  color: var(--edu-accent);
-  font-size: 0.85em;
-}
-
-.home-stat__num {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.7em;
-  font-weight: 700;
-  line-height: 1.1;
-  color: var(--edu-ink);
-}
-
-.home-stat__label {
-  font-size: 0.72em;
-  font-weight: 600;
-  color: var(--edu-muted);
-}
-
 .home-section {
   margin-bottom: 1.4em;
 }
@@ -1156,7 +1102,6 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
    an invisible strip fills the gap below so the cursor stays inside.
    ========================================================================== */
 
-.home-stat,
 .home-role,
 .home-sum,
 .home-awards li,
@@ -1164,7 +1109,6 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
 }
 
-.home-stat:hover::after,
 .home-role:hover::after,
 .home-sum:hover::after,
 .home-awards li:hover::after,
