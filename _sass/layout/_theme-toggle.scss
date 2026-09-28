@@ -196,3 +196,88 @@ html[data-theme="dark"] .theme-toggle {
 @media (prefers-reduced-motion: reduce) {
   .theme-toggle svg { transition: none; }
 }
+
+/* Menu (hamburger) button, restyled to match the theme toggle
+   ========================================================================== */
+
+.greedy-nav > button {
+  display: grid;
+  place-items: center;
+  top: 50%;
+  width: 2.3rem;
+  height: 2.3rem;
+  padding: 0;
+  border: 1px solid var(--global-border-color);
+  border-radius: 50%;
+  background-color: var(--global-bg-color);
+  transform: translateY(-50%);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+
+  &:hover {
+    border-color: #9dbcf5;
+    box-shadow: 0 6px 16px -8px rgba(#1f4fbf, 0.6);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #1f4fbf;
+    outline-offset: 2px;
+  }
+
+  &.close {
+    border-color: #9dbcf5;
+    background-color: var(--edu-tint);
+  }
+
+  .navicon,
+  .navicon:before,
+  .navicon:after {
+    width: 16px;
+    height: 2px;
+    border-radius: 2px;
+    background: #1f4fbf;
+  }
+
+  .navicon:before { top: -5px; }
+  .navicon:after { bottom: -5px; }
+
+  &.close .navicon { background: transparent; }
+
+  &.close .navicon:before,
+  &.close .navicon:after {
+    top: 0;
+    bottom: auto;
+  }
+}
+
+html[data-theme="dark"] .greedy-nav > button {
+  .navicon,
+  .navicon:before,
+  .navicon:after {
+    background: #9dbcf5;
+  }
+
+  &.close .navicon { background: transparent; }
+
+  &:hover { border-color: #34456b; }
+}
+
+/* The overflow menu it opens */
+.greedy-nav .hidden-links {
+  margin-top: 12px;
+  padding: 6px;
+  border-radius: 14px;
+  box-shadow: 0 16px 36px -12px rgba(#0f2a6b, 0.35);
+
+  a {
+    border-radius: 10px;
+  }
+}
+
+html[data-theme="dark"] .greedy-nav .hidden-links {
+  &:after { border-color: #121b2f transparent; }
+
+  li,
+  a { background-color: transparent; }
+
+  a:hover { background-color: #18233d; }
+}
