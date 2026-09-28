@@ -294,3 +294,39 @@ $profile-ease  : cubic-bezier(0.22, 1, 0.36, 1);
 html[data-theme="dark"] .author__urls-wrapper .author__urls:after {
   border-color: #121b2f transparent;
 }
+
+/* Bio shown as separate lines (author.bio_lines) */
+.author__bio-line {
+  display: block;
+}
+
+.author__bio-line:first-child {
+  font-weight: 700;
+  color: var(--edu-ink);
+}
+
+.sidebar .author__bio {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5em;
+}
+
+.sidebar .author__bio-icon {
+  flex: none;
+  margin-top: 0.2em;
+  margin-right: 0;
+}
+
+@include breakpoint($large) {
+  .sidebar .author__bio {
+    padding-right: 0.5em;
+  }
+
+}
+
+/* keep each line whole where the sidebar is wide enough */
+@include breakpoint($x-large) {
+  .author__bio-line {
+    white-space: nowrap;
+  }
+}
