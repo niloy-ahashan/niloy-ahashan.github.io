@@ -65,8 +65,8 @@ $profile-ease  : cubic-bezier(0.22, 1, 0.36, 1);
   color: var(--edu-accent);
 }
 
-/* On large screens the bio becomes a small tinted card with an accent bar */
-@include breakpoint($large) {
+/* The bio is a small tinted card with an accent bar on every screen size */
+@media screen {
   .sidebar .author__bio {
     position: relative;
     display: flex;
@@ -326,6 +326,23 @@ html[data-theme="dark"] .author__urls-wrapper .author__urls:after {
 
 /* keep each line whole where the sidebar is wide enough */
 @include breakpoint($x-large) {
+  .author__bio-line {
+    white-space: nowrap;
+  }
+}
+
+/* Phones/tablets: fit the bio card into the compact header row */
+@media (max-width: #{$large - 1px}) {
+  .sidebar .author__bio {
+    display: flex;
+    width: fit-content;
+    margin-top: 0.4em;
+    padding: 0.45em 0.7em 0.45em 0.8em;
+    font-size: 0.78em;
+  }
+}
+
+@media (max-width: #{$large - 1px}) {
   .author__bio-line {
     white-space: nowrap;
   }
