@@ -243,3 +243,54 @@ $profile-ease  : cubic-bezier(0.22, 1, 0.36, 1);
     box-shadow: 0 0 0 2px var(--global-bg-color), 0 0 0 4px var(--edu-line-strong);
   }
 }
+
+/* "Links" button and dropdown (phones/tablets)
+   The theme gives the dropdown z-index -1 and the sidebar no stacking
+   order, so the list opened underneath the page content. Lift the
+   sidebar above the content below the large breakpoint.
+   ========================================================================== */
+
+@media (max-width: #{$large - 1px}) {
+  .sidebar {
+    position: relative;
+    z-index: 30;
+  }
+
+  .author__urls-wrapper .author__urls {
+    z-index: 20;
+    min-width: 13.5em;
+    padding: 6px;
+    border-radius: 14px;
+    box-shadow: 0 16px 36px -12px rgba(#0f2a6b, 0.35);
+  }
+}
+
+.author__links-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  font-family: "Nunito", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 700;
+  border-radius: 999px !important;
+  color: var(--edu-strong) !important;
+}
+
+.author__links-chev {
+  font-size: 0.75em;
+  transition: transform 0.3s $profile-ease;
+
+  .author__links-btn.open & {
+    transform: rotate(180deg);
+  }
+}
+
+.author__links-btn:hover,
+.author__links-btn.open {
+  border-color: var(--edu-line-strong) !important;
+  background-color: var(--edu-tint) !important;
+  color: var(--edu-strong) !important;
+}
+
+html[data-theme="dark"] .author__urls-wrapper .author__urls:after {
+  border-color: #121b2f transparent;
+}

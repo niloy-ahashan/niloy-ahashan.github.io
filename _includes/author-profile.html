@@ -27,8 +27,8 @@
   </div>
 
   <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">Follow</button>
-    <ul class="author__urls social-icons">
+    <button class="btn btn--inverse author__links-btn" aria-expanded="false" aria-controls="author-links"><i class="fa-solid fa-link" aria-hidden="true"></i>Links<i class="fa-solid fa-chevron-down author__links-chev" aria-hidden="true"></i></button>
+    <ul class="author__urls social-icons" id="author-links">
       <!-- Font Awesome icons / Biographic information  -->
       {% if author.location %}
         <li{% unless author.location_url %} class="author__desktop"{% endunless %}>{% if author.location_url %}<a href="{{ author.location_url }}"><i class="fa-solid fa-location-dot icon-pad-right" aria-hidden="true"></i>{{ author.location }}</a>{% else %}<i class="fa-solid fa-location-dot icon-pad-right" aria-hidden="true"></i>{{ author.location }}{% endif %}</li>

@@ -36,3 +36,13 @@
   window.addEventListener('resize', place);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(place);
 })();
+
+/* Sidebar "Links" button (phones/tablets): the theme toggles the list;
+   keep aria-expanded in sync for screen readers. */
+(function () {
+  var btn = document.querySelector('.author__links-btn');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    btn.setAttribute('aria-expanded', btn.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+  });
+})();
