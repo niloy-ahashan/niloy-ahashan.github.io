@@ -90,7 +90,7 @@ html[data-theme="dark"] {
   .home-role,
   .home-sum,
   .home-panel,
-  .home-awards li {
+  .award-card {
     box-shadow: 0 14px 34px -24px rgba(#000, 0.9);
   }
 
@@ -109,8 +109,6 @@ html[data-theme="dark"] {
 
   .pub-scholar { background: var(--edu-surface); }
 
-  .home-awards li { background: var(--edu-surface); }
-  .home-awards li:hover { border-color: #6b5520; }
   .home-awards__year { background: rgba(#f2b632, 0.14); color: #f5c969; }
 
   .home-fun strong { color: #ff6b9a; }

@@ -975,30 +975,79 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   i { color: var(--edu-accent); }
 }
 
-.home-awards {
+/* Honors & Awards: one card per institution */
+.award-cards {
   display: grid;
-  gap: 0.5em;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  gap: 0.8em;
+  align-items: start;
 
   @include breakpoint($medium) {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.award-card {
+  position: relative;
+  padding: 0.9em 1em 0.6em;
+  border: 1px solid var(--edu-line);
+  border-radius: 16px;
+  background: var(--edu-surface);
+  box-shadow: 0 10px 26px -20px rgba($edu-accent-deep, 0.45);
+  transition: transform 0.45s $edu-ease, box-shadow 0.45s $edu-ease, border-color 0.45s ease;
+
+  &:hover {
+    transform: scale(1.01);
+    border-color: var(--edu-line-strong);
+    box-shadow: 0 18px 34px -22px rgba($edu-accent-deep, 0.55);
+
+    .award-card__head img { transform: rotate(-6deg) scale(1.08); }
+  }
+}
+
+.award-card__head {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  padding-bottom: 0.6em;
+  margin-bottom: 0.3em;
+  border-bottom: 1px solid var(--edu-line);
+
+  img {
+    width: 2.2em;
+    height: 2.2em;
+    object-fit: contain;
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 0.95em;
+    color: var(--edu-ink);
+  }
+}
+
+html[data-theme="dark"] .award-card__head img {
+  padding: 3px;
+  border-radius: 50%;
+  background: #f4f7fd;
+}
+
+.award-card__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 
   li {
     display: flex;
     align-items: flex-start;
     gap: 0.65em;
     margin: 0;
-    padding: 0.7em 0.9em;
-    border: 1px solid var(--edu-line);
-    border-radius: 14px;
-    background: var(--edu-surface);
+    padding: 0.5em 0.2em;
+    border-radius: 10px;
     font-size: 0.8em;
     line-height: 1.5;
     color: var(--edu-text);
-    transition: transform 0.4s $edu-ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    transition: background-color 0.3s ease;
 
     > i {
       margin-top: 0.15em;
@@ -1009,51 +1058,15 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
     > span:first-of-type { flex: 1; }
 
     &:hover {
-      transform: translateY(-3px);
-      border-color: #f1d9a6;
-      box-shadow: 0 14px 26px -20px rgba(#a15c00, 0.5);
+      background: var(--edu-tint);
 
       > i { transform: rotate(-12deg) scale(1.15); }
     }
   }
-}
 
-.award-group + .award-group {
-  margin-top: 1em;
-}
-
-.award-group__title {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-  margin: 0 0 0.55em;
-  font-size: 0.82em;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: var(--edu-strong);
-
-  img {
-    width: 2em;
-    height: 2em;
-    object-fit: contain;
+  li + li {
+    border-top: 1px dashed var(--edu-line);
   }
-
-  > i {
-    display: grid;
-    place-items: center;
-    width: 1.6em;
-    height: 1.6em;
-    border-radius: 50%;
-    background: var(--edu-tint);
-    font-size: 0.85em;
-    color: var(--edu-accent);
-  }
-}
-
-html[data-theme="dark"] .award-group__title img {
-  padding: 2px;
-  border-radius: 50%;
-  background: #f4f7fd;
 }
 
 .home-awards__year {
@@ -1256,14 +1269,12 @@ html[data-theme="dark"] .home-fun:hover strong { color: #ff6b9a; }
 
 .home-role,
 .home-sum,
-.home-awards li,
 .teach-courses li {
   position: relative;
 }
 
 .home-role:hover::after,
 .home-sum:hover::after,
-.home-awards li:hover::after,
 .teach-courses li:hover::after,
 .pub-btn:hover::after,
 .pub-scholar:hover::after {
