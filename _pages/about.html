@@ -143,27 +143,6 @@ redirect_from:
   </section>
 
   <section class="home-section">
-    <h2 class="teach-group__title"><span class="teach-group__icon"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></span>Peer Review</h2>
-    <div class="edu-list">
-      <article class="edu-card edu-reveal">
-        <a class="edu-card__go" href="https://www.frontiersin.org/journals/signal-processing" aria-label="Frontiers in Signal Processing"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
-        <div class="edu-card__logo">
-          <img src="{{ base_path }}/images/logos/frontiers.svg" alt="Frontiers logo" width="80" height="80">
-        </div>
-        <div class="edu-card__body">
-          <h3 class="edu-card__degree">Journal Reviewer</h3>
-          <span class="edu-card__school">Frontiers in Signal Processing</span>
-          <ul class="edu-meta">
-            <li><i class="fa-solid fa-layer-group" aria-hidden="true"></i>Biomedical Signal Processing</li>
-            <li><i class="fa-solid fa-flask" aria-hidden="true"></i>Science and Technology</li>
-          </ul>
-        </div>
-        <img class="edu-card__mark" src="{{ base_path }}/images/logos/frontiers.svg" alt="" aria-hidden="true">
-      </article>
-    </div>
-  </section>
-
-  <section class="home-section">
     <h2 class="teach-group__title"><span class="teach-group__icon"><i class="fa-solid fa-trophy" aria-hidden="true"></i></span>Honors &amp; Awards</h2>
     <ul class="home-awards">
       <li class="edu-reveal"><i class="fa-solid fa-medal" aria-hidden="true"></i><span>Graduated with the Highest Distinction from BRAC University</span><span class="home-awards__year">2021</span></li>
@@ -229,9 +208,9 @@ redirect_from:
           <h3>Research</h3>
         </div>
         <ul>
-          {% assign research = site.research | sort: "date" | reverse %}
+          {% assign research = site.research | sort: "date", "first" | reverse %}
           {% for r in research %}
-          <li><strong>{{ r.title }}</strong><span>{{ r.institution }} &middot; {{ r.period }}</span></li>
+          <li><strong>{{ r.title }}</strong><span>{{ r.institution }}{% if r.period %} &middot; {{ r.period }}{% endif %}</span></li>
           {% endfor %}
         </ul>
         <a class="home-sum__more" href="{{ base_path }}/research/">View research <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>

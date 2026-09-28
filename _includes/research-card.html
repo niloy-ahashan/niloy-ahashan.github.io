@@ -1,7 +1,7 @@
 {% comment %} One Research page card. Expects `item` (a _research document) and `base_path`. {% endcomment %}
 <article class="edu-card edu-reveal">
   {% if item.dept_url %}
-  <a class="edu-card__go" href="{{ item.dept_url }}" aria-label="{{ item.department }}, {{ item.institution }}"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+  <a class="edu-card__go" href="{{ item.dept_url }}" aria-label="{% if item.department %}{{ item.department }}, {% endif %}{{ item.institution }}"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
   {% endif %}
   <div class="edu-card__logo">
     <img src="{{ base_path }}/images/logos/{{ item.logo }}" alt="{{ item.institution }} logo" width="80" height="80">
@@ -13,9 +13,10 @@
     <h3 class="edu-card__degree">{{ item.title }}</h3>
     <span class="edu-card__school">{{ item.institution }}</span>
     <ul class="edu-meta">
-      <li><i class="fa-solid fa-building-columns" aria-hidden="true"></i>{{ item.department }}</li>
-      <li><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>{{ item.period }}</li>
-      <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{{ item.location }}</li>
+      {% if item.department %}<li><i class="fa-solid {{ item.department_icon | default: 'fa-building-columns' }}" aria-hidden="true"></i>{{ item.department }}</li>{% endif %}
+      {% if item.extra_meta %}<li><i class="fa-solid {{ item.extra_icon | default: 'fa-tag' }}" aria-hidden="true"></i>{{ item.extra_meta }}</li>{% endif %}
+      {% if item.period %}<li><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>{{ item.period }}</li>{% endif %}
+      {% if item.location %}<li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{{ item.location }}</li>{% endif %}
     </ul>
     {% if item.project_title %}
     <p class="research-thesis"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><span><em>{{ item.project_title }}</em>{% if item.supervisor %}<span class="research-thesis__sup">Supervisor: {{ item.supervisor }}</span>{% endif %}</span></p>
