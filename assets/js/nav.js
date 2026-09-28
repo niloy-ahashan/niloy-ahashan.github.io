@@ -66,6 +66,32 @@
 
   fit();
   window.addEventListener('resize', fit);
+  window.addEventListener('sidebar:moved', fit);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
   window.addEventListener('load', fit);
+})();
+
+/* Phones/tablets: put the Links button (and its dropdown) right after
+   "He/Him"; on larger screens move it back below the bio, where the
+   links show as a full list. The theme's click handler is bound to the
+   button element itself, so it keeps working after the move. */
+(function () {
+  var wrapper = document.querySelector('.sidebar .author__urls-wrapper');
+  var tagrow = document.querySelector('.sidebar .author__tagrow');
+  if (!wrapper || !tagrow) return;
+  var home = wrapper.parentNode;
+  var homeNext = wrapper.nextSibling;
+
+  function place() {
+    var small = window.innerWidth < 925;
+    if (small && wrapper.parentNode !== tagrow) {
+      tagrow.appendChild(wrapper);
+    } else if (!small && wrapper.parentNode !== home) {
+      home.insertBefore(wrapper, homeNext);
+    }
+    window.dispatchEvent(new Event('sidebar:moved'));
+  }
+
+  place();
+  window.addEventListener('resize', place);
 })();
