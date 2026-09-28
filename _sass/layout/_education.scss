@@ -1064,36 +1064,105 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   i { transition: transform 0.35s $edu-ease; }
 }
 
+/* FC Barcelona note: a spinning Champions League ball that turns into the
+   Barça crest on hover, over blurred blaugrana stripes */
 .home-fun {
+  position: relative;
+  isolation: isolate;
   display: flex;
   align-items: center;
-  gap: 0.9em;
+  gap: 1em;
   padding: 0.9em 1.2em;
   border-radius: 16px;
   background: var(--edu-hero-bg);
+  overflow: hidden;
+
+  /* blurred blue/garnet stripes, shown on hover */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -30px;
+    z-index: -1;
+    background: repeating-linear-gradient(100deg, #004d98 0 46px, #a50044 46px 92px);
+    background-size: 184px 100%;
+    filter: blur(14px) saturate(1.1);
+    opacity: 0;
+    transform: scale(1.08);
+    transition: opacity 0.5s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
 
   p {
     margin: 0;
     font-size: 0.82em;
     line-height: 1.6;
+    transition: color 0.4s ease;
   }
 
-  strong { color: #a50044; }
+  strong {
+    color: #a50044;
+    transition: color 0.4s ease;
+  }
 
-  &:hover .home-fun__ball i { animation-duration: 1.2s; }
+  &:hover {
+    &::before {
+      opacity: 0.32;
+      transform: none;
+      animation: home-fun-stripes 6s linear infinite;
+    }
+
+    p { color: var(--edu-ink); }
+    .home-fun__ball { opacity: 0; transform: scale(0.4) rotate(180deg); }
+    .home-fun__crest { opacity: 1; transform: none; }
+  }
+}
+
+html[data-theme="dark"] .home-fun:hover::before { opacity: 0.45; }
+html[data-theme="dark"] .home-fun:hover strong { color: #ff6b9a; }
+
+.home-fun__badge {
+  position: relative;
+  flex: none;
+  width: 3.2em;
+  height: 3.2em;
+}
+
+.home-fun__ball,
+.home-fun__crest {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .home-fun__ball {
-  flex: none;
-  display: grid;
-  place-items: center;
-  width: 2.4em;
-  height: 2.4em;
   border-radius: 50%;
-  background: linear-gradient(135deg, #004d98, #a50044);
-  color: #fff;
+  box-shadow: 0 6px 14px -6px rgba(#000, 0.45);
+  animation: home-spin 7s linear infinite;
+  transition: opacity 0.35s ease, transform 0.5s ease;
+}
 
-  i { animation: home-spin 6s linear infinite; }
+.home-fun__crest {
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(#000, 0.25));
+  opacity: 0;
+  transform: scale(0.5) rotateY(90deg);
+  transition: opacity 0.35s ease 0.1s, transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s;
+}
+
+.home-fun-credit {
+  margin: 0.35em 0 0;
+  font-size: 0.62em;
+  color: var(--global-text-color-light);
+  text-align: right;
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+@keyframes home-fun-stripes {
+  to { background-position: 184px 0; }
 }
 
 /* Hover lift without flicker
