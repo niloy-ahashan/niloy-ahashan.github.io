@@ -46,3 +46,26 @@
     btn.setAttribute('aria-expanded', btn.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
   });
 })();
+
+/* Phones/tablets: size the sidebar photo to the height of the text block
+   beside it (name through the bio card). Desktop keeps its fixed size. */
+(function () {
+  var avatar = document.querySelector('.sidebar .author__avatar--hello');
+  var content = document.querySelector('.sidebar .author__content');
+  if (!avatar || !content) return;
+
+  function fit() {
+    if (window.innerWidth >= 925) {
+      avatar.style.removeProperty('--avatar-size');
+      return;
+    }
+    var h = Math.round(content.getBoundingClientRect().height);
+    var size = Math.max(64, Math.min(h, 160));
+    avatar.style.setProperty('--avatar-size', size + 'px');
+  }
+
+  fit();
+  window.addEventListener('resize', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  window.addEventListener('load', fit);
+})();

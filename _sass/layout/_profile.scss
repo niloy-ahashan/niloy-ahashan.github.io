@@ -223,20 +223,21 @@ $profile-ease  : cubic-bezier(0.22, 1, 0.36, 1);
 
 @media (max-width: #{$large - 1px}) {
   .sidebar .author__avatar--hello {
-    width: 64px;
-    min-width: 64px;
+    width: var(--avatar-size, 64px);
+    min-width: var(--avatar-size, 64px);
+    vertical-align: middle;
   }
 
   .sidebar .avatar-hello {
     display: block;
-    width: 64px;
-    height: 64px;
+    width: var(--avatar-size, 64px);
+    height: var(--avatar-size, 64px);
   }
 
   .sidebar .avatar-hello img.author__avatar {
     display: block;
-    width: 64px;
-    height: 64px;
+    width: var(--avatar-size, 64px);
+    height: var(--avatar-size, 64px);
     max-width: none;
     border-radius: 50%;
     object-fit: cover;
