@@ -23,7 +23,7 @@
   <div class="author__content">
     <h3 class="author__name">{{ author.name }}</h3>
     {% if author.pronouns %}<p class="author__pronouns">{{ author.pronouns }}</p>{% endif %}
-    {% if author.bio %}<p class="author__bio"><i class="fa-solid fa-graduation-cap author__bio-icon" aria-hidden="true"></i><span>{% if author.bio_lines %}{% for line in author.bio_lines %}{% if line == author.employer and author.employer_url %}<a class="author__bio-line author__bio-link" href="{{ author.employer_url }}">{{ line }}</a>{% else %}<span class="author__bio-line">{{ line }}</span>{% endif %}{% endfor %}{% else %}{{ author.bio }}{% endif %}</span></p>{% endif %}
+    {% if author.bio %}<p class="author__bio"><i class="fa-solid fa-graduation-cap author__bio-icon" aria-hidden="true"></i><span>{% if author.bio_lines %}{% for line in author.bio_lines %}{% if line.url %}<a class="author__bio-line author__bio-link" href="{{ line.url }}">{{ line.text }}</a>{% else %}<span class="author__bio-line">{{ line.text | default: line }}</span>{% endif %}{% endfor %}{% else %}{{ author.bio }}{% endif %}</span></p>{% endif %}
   </div>
 
   <div class="author__urls-wrapper">
