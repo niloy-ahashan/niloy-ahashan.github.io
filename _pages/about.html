@@ -210,10 +210,12 @@ redirect_from:
         <ul>
           {% assign research_dated = site.research | where_exp: "r", "r.research_group != 'review'" | sort: "date" | reverse %}
           {% assign research_reviews = site.research | where: "research_group", "review" | sort: "order" %}
-          {% assign research = research_dated | concat: research_reviews %}
-          {% for r in research %}
+          {% for r in research_dated %}
           <li><strong>{{ r.title }}</strong><span>{{ r.institution }}{% if r.period %} &middot; {{ r.period }}{% endif %}</span></li>
           {% endfor %}
+          {% if research_reviews.size > 0 %}
+          <li><strong>{{ research_reviews.first.title }}</strong><span>{{ research_reviews | map: "institution" | join: ", " }}</span></li>
+          {% endif %}
         </ul>
         <a class="home-sum__more" href="{{ base_path }}/research/">View research <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
       </div>

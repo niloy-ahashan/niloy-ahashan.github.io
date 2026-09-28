@@ -1,0 +1,20 @@
+{% comment %} One card listing every journal reviewed. Expects `reviews` (the _research entries with research_group: review, in display order) and `base_path`. {% endcomment %}
+{% assign first_review = reviews | first %}
+<article class="edu-card edu-reveal">
+  <div class="edu-card__logo">
+    <img src="{{ base_path }}/images/logos/{{ first_review.logo }}" alt="Frontiers logo" width="80" height="80">
+  </div>
+  <div class="edu-card__body">
+    <h3 class="edu-card__degree">{{ first_review.title }}</h3>
+    <span class="edu-card__school">Frontiers</span>
+    <ul class="review-journals">
+      {% for item in reviews %}
+      <li>
+        <a class="review-journals__name" href="{{ item.dept_url }}"><i class="fa-solid fa-book-open" aria-hidden="true"></i>{{ item.institution }}<i class="fa-solid fa-arrow-up-right-from-square review-journals__ext" aria-hidden="true"></i></a>
+        {% if item.department %}<span class="review-journals__section"><i class="fa-solid {{ item.department_icon | default: 'fa-layer-group' }}" aria-hidden="true"></i>{{ item.department }}</span>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <img class="edu-card__mark" src="{{ base_path }}/images/logos/{{ first_review.logo }}" alt="" aria-hidden="true">
+</article>
