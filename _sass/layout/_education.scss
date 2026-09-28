@@ -1213,18 +1213,6 @@ html[data-theme="dark"] .home-fun:hover strong { color: #ff6b9a; }
   transition: opacity 0.35s ease 0.1s, transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s;
 }
 
-.home-fun-credit {
-  margin: 0.35em 0 0;
-  font-size: 0.62em;
-  color: var(--global-text-color-light);
-  text-align: right;
-
-  a {
-    color: inherit;
-    text-decoration: underline;
-  }
-}
-
 @keyframes home-fun-stripes {
   to { background-position: 184px 0; }
 }
