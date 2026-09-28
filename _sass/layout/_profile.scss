@@ -213,3 +213,33 @@ $profile-ease  : cubic-bezier(0.22, 1, 0.36, 1);
     background-clip: content-box;
   }
 }
+
+/* Photo on phones and tablets
+   Below the large breakpoint the theme shows the photo as a small table
+   cell beside the name. With the hover-ring wrapper around it, that
+   combination can collapse to nothing in some browsers (e.g. Safari), and
+   36px was easy to miss anyway, so give it an explicit block size here.
+   ========================================================================== */
+
+@media (max-width: #{$large - 1px}) {
+  .sidebar .author__avatar--hello {
+    width: 64px;
+    min-width: 64px;
+  }
+
+  .sidebar .avatar-hello {
+    display: block;
+    width: 64px;
+    height: 64px;
+  }
+
+  .sidebar .avatar-hello img.author__avatar {
+    display: block;
+    width: 64px;
+    height: 64px;
+    max-width: none;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 2px var(--global-bg-color), 0 0 0 4px var(--edu-line-strong);
+  }
+}
