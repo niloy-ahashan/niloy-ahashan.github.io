@@ -268,7 +268,7 @@ redirect_from:
         <ul>
           {% assign papers = site.publications | sort: "date" | reverse %}
           {% for p in papers %}
-          <li><strong><a href="{{ base_path }}{{ p.url }}">{{ p.title }}</a></strong><span>{{ p.venue_short | default: p.venue }} &middot; {{ p.date | date: "%Y" }}</span></li>
+          <li><strong>{{ p.title }}</strong><span>{{ p.venue_short | default: p.venue }} &middot; {{ p.date | date: "%Y" }}</span></li>
           {% endfor %}
         </ul>
         <a class="home-sum__more" href="{{ base_path }}/publications/">View publications <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
