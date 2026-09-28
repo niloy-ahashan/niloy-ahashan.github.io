@@ -347,3 +347,17 @@ html[data-theme="dark"] .author__urls-wrapper .author__urls:after {
     white-space: nowrap;
   }
 }
+
+/* "University of Kentucky" in the bio card links to the university */
+.sidebar .author__bio-link {
+  color: var(--edu-accent);
+  text-decoration: none;
+  background: linear-gradient(currentColor, currentColor) left bottom / 0 1px no-repeat;
+  transition: background-size 0.35s $profile-ease, color 0.25s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--edu-strong);
+    background-size: 100% 1px;
+  }
+}
