@@ -60,7 +60,7 @@
       return;
     }
     var h = Math.round(content.getBoundingClientRect().height);
-    var size = Math.max(64, Math.min(h, 160));
+    var size = Math.max(64, Math.min(h, 160, Math.round(window.innerWidth * 0.3)));
     avatar.style.setProperty('--avatar-size', size + 'px');
   }
 

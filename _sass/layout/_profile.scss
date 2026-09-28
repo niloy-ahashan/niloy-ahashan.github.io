@@ -417,3 +417,60 @@ html[data-theme="dark"] .author__urls-wrapper .author__urls:after {
 .sidebar:hover .author__name::after {
   width: 100%;
 }
+
+/* ==========================================================================
+   Very small phones (e.g. 320px iPhone SE)
+   The theme's 250px minimum menu width plus the name and theme button,
+   and the unbreakable bio lines beside the photo, made the page 20px too
+   wide. Let them shrink and wrap there.
+   ========================================================================== */
+
+@media (max-width: 400px) {
+  .greedy-nav {
+    min-width: 0;
+  }
+
+  .greedy-nav .visible-links a.brand .brand__name {
+    font-size: 1em;
+  }
+
+  .theme-toggle {
+    margin-left: 0.4rem;
+  }
+
+  .author__bio-line {
+    white-space: normal;
+  }
+
+  .sidebar .author__content {
+    padding-right: 0;
+  }
+}
+
+/* ==========================================================================
+   Touch screens: give small text links a comfortable tap area (at least
+   ~24px tall) without changing how they look
+   ========================================================================== */
+
+@media (hover: none) and (pointer: coarse) {
+  .author__links-btn {
+    min-height: 32px;
+  }
+
+  .sidebar .author__bio-link,
+  .home-sum__more,
+  .review-journals__name,
+  .edu-card__school,
+  .page__content a,
+  .page__footer a {
+    display: inline-block;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  .sidebar .author__bio-link {
+    display: block;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
