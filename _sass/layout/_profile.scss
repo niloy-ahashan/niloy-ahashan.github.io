@@ -400,3 +400,19 @@ html[data-theme="dark"] .author__urls-wrapper .author__urls:after {
     }
   }
 }
+
+/* Desktop: keep a gap between the name's accent line and the He/Him tag,
+   and let the accent line run the full width of the name on hover */
+@include breakpoint($large) {
+  .sidebar .author__name {
+    width: fit-content;
+  }
+
+  .author__tagrow {
+    margin-top: 0.75em;
+  }
+}
+
+.sidebar:hover .author__name::after {
+  width: 100%;
+}
