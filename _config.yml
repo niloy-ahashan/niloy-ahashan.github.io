@@ -42,6 +42,11 @@ author:
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
   googlescholar    : "https://scholar.google.com/citations?user=KadRLLAAAAAJ&hl=en"
+  faculty_profiles : # shown in the sidebar after Google Scholar
+    - label: "BRAC University Profile"
+      url: "https://www.bracu.ac.bd/about/people/ahashan-habib-niloy"
+    - label: "BRAC CSE Profile"
+      url: "https://cse.bracu.ac.bd/faculty_profile/94/ahashan_habib_niloy"
   impactstory      : # URL
   orcid            : # URL
   semantic         : # URL

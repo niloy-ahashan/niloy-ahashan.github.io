@@ -885,19 +885,6 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   margin: 0.2em 0 0.4em;
 }
 
-.home-panel .home-panel__links {
-  margin: 0.8em 0 0;
-  font-size: 0.78em;
-
-  a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45em;
-    font-weight: 600;
-    color: var(--edu-accent);
-  }
-}
-
 .home-roles {
   display: grid;
   gap: 0.7em;
