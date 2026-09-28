@@ -1018,6 +1018,44 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   }
 }
 
+.award-group + .award-group {
+  margin-top: 1em;
+}
+
+.award-group__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0 0 0.55em;
+  font-size: 0.82em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--edu-strong);
+
+  img {
+    width: 2em;
+    height: 2em;
+    object-fit: contain;
+  }
+
+  > i {
+    display: grid;
+    place-items: center;
+    width: 1.6em;
+    height: 1.6em;
+    border-radius: 50%;
+    background: var(--edu-tint);
+    font-size: 0.85em;
+    color: var(--edu-accent);
+  }
+}
+
+html[data-theme="dark"] .award-group__title img {
+  padding: 2px;
+  border-radius: 50%;
+  background: #f4f7fd;
+}
+
 .home-awards__year {
   flex: none;
   padding: 0.05em 0.55em;
