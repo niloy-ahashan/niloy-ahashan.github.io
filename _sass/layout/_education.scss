@@ -815,34 +815,6 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
 /* Home page
    ========================================================================== */
 
-.home-hero__hello {
-  margin: 0;
-  font-size: 0.8em;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--edu-accent);
-  animation: edu-rise 0.8s $edu-ease both;
-}
-
-.home-hero__name {
-  margin-bottom: 0.2em;
-  animation: edu-rise 0.8s 0.05s $edu-ease both;
-}
-
-.home-hero__role {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-  margin: 0 0 0.5em;
-  font-size: 0.85em;
-  font-weight: 600;
-  color: var(--edu-strong);
-  animation: edu-rise 0.8s 0.1s $edu-ease both;
-
-  i { color: var(--edu-accent); }
-}
-
 .home-cta {
   display: flex;
   flex-wrap: wrap;
@@ -883,6 +855,45 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
 
 .home-interests {
   margin: 0.2em 0 0.4em;
+}
+
+/* About Me: one card with the bio, interests, CV button, and the animated
+   federated-learning illustration */
+.home-about {
+  display: grid;
+  gap: 0.5em;
+  padding: 1em 1.2em 1.1em;
+  border: 1px solid var(--edu-line);
+  border-radius: 20px;
+  background: var(--edu-hero-bg);
+  box-shadow: 0 10px 30px -22px rgba($edu-accent-deep, 0.4);
+  overflow: hidden;
+
+  @include breakpoint($medium) {
+    grid-template-columns: minmax(0, 1fr) 190px;
+    align-items: center;
+    gap: 1.2em;
+    padding: 1.3em 1.5em 1.3em;
+  }
+}
+
+.home-about__text p {
+  margin: 0 0 0.75em;
+  font-size: 0.85em;
+  line-height: 1.7;
+}
+
+.home-about__art {
+  order: -1;
+  justify-self: center;
+  width: 100%;
+  max-width: 150px;
+
+  @include breakpoint($medium) {
+    order: 0;
+    max-width: 190px;
+    align-self: start;
+  }
 }
 
 .home-roles {
@@ -1346,6 +1357,7 @@ html[data-theme="dark"] .home-fun:hover strong { color: #ff6b9a; }
 
 .edu-hero__intro,
 .home-panel p:not(.home-panel__links):not(.home-panel__note),
+.home-about__text p,
 .pub-abstract__text,
 .home-fun p,
 .page__content p {
