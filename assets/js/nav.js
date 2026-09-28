@@ -95,3 +95,21 @@
   place();
   window.addEventListener('resize', place);
 })();
+
+/* Open links that leave the site, and PDFs, in a new tab. Links between
+   the site's own pages stay in the same tab; mailto/tel links are left
+   alone since they open an app rather than a page. */
+(function () {
+  var here = window.location.host;
+  Array.prototype.forEach.call(document.querySelectorAll('a[href]'), function (a) {
+    var href = a.getAttribute('href');
+    if (!href || href.charAt(0) === '#' || /^(mailto|tel|javascript):/i.test(href)) return;
+    var external = a.host && a.host !== here;
+    var pdf = /\.pdf($|[?#])/i.test(a.pathname || href);
+    if (!external && !pdf) return;
+    a.setAttribute('target', '_blank');
+    var rel = (a.getAttribute('rel') || '').split(/\s+/).filter(Boolean);
+    ['noopener', 'noreferrer'].forEach(function (r) { if (rel.indexOf(r) === -1) rel.push(r); });
+    a.setAttribute('rel', rel.join(' '));
+  });
+})();
