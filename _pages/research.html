@@ -11,7 +11,7 @@ hide_title: true
 
 {% assign graduate = site.research | where: "research_group", "graduate" | sort: "date" | reverse %}
 {% assign undergraduate = site.research | where: "research_group", "undergraduate" | sort: "date" | reverse %}
-{% assign reviews = site.research | where: "research_group", "review" %}
+{% assign reviews = site.research | where: "research_group", "review" | sort: "order" %}
 
 <div class="edu">
 

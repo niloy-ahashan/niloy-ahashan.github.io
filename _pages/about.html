@@ -208,7 +208,9 @@ redirect_from:
           <h3>Research</h3>
         </div>
         <ul>
-          {% assign research = site.research | sort: "date", "first" | reverse %}
+          {% assign research_dated = site.research | where_exp: "r", "r.research_group != 'review'" | sort: "date" | reverse %}
+          {% assign research_reviews = site.research | where: "research_group", "review" | sort: "order" %}
+          {% assign research = research_dated | concat: research_reviews %}
           {% for r in research %}
           <li><strong>{{ r.title }}</strong><span>{{ r.institution }}{% if r.period %} &middot; {{ r.period }}{% endif %}</span></li>
           {% endfor %}
