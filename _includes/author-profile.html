@@ -47,9 +47,6 @@
       {% if author.googlescholar %}
         <li><a href="{{ author.googlescholar }}"><i class="ai ai-google-scholar icon-pad-right"></i>Google Scholar</a></li>
       {% endif %}
-      {% for profile in author.faculty_profiles %}
-        <li><a href="{{ profile.url }}"><i class="fa-solid fa-id-badge icon-pad-right" aria-hidden="true"></i>{{ profile.label }}</a></li>
-      {% endfor %}
       {% if author.semantic %}
         <li><a href="{{ author.semantic }}"><i class="ai ai-semantic-scholar ai-fw icon-pad-right"></i>Semantic Scholar</a></li>
       {% endif %}
@@ -162,6 +159,9 @@
       {% if author.zhihu %}
       <li><a href="https://www.zhihu.com/people/{{ author.zhihu }}"><i class="fab fa-fw fa-zhihu icon-pad-right" aria-hidden="true"></i>Zhihu</a></li>
       {% endif %}      
+      {% for profile in author.faculty_profiles %}
+        <li><a href="{{ profile.url }}"><i class="fa-solid fa-id-badge icon-pad-right" aria-hidden="true"></i>{{ profile.label }}</a></li>
+      {% endfor %}
     </ul>
   </div>
 </div>
