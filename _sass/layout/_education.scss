@@ -1038,7 +1038,7 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
 .award-cards {
   display: grid;
   gap: 0.8em;
-  align-items: start;
+  align-items: stretch;
 
   @include breakpoint($medium) {
     grid-template-columns: repeat(2, 1fr);
