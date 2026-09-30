@@ -1,3 +1,7 @@
 <!-- start custom analytics snippet -->
-
+{% if site.analytics.goatcounter_code and site.analytics.goatcounter_code != "" and jekyll.environment == "production" %}
+<!-- GoatCounter: privacy-friendly visit counts, no cookies -->
+<script data-goatcounter="https://{{ site.analytics.goatcounter_code }}.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+{% endif %}
 <!-- end custom analytics snippet -->
