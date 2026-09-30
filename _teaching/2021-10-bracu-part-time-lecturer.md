@@ -1,5 +1,6 @@
 ---
 title: "Adjunct Lecturer"
+title_url: "https://cse.bracu.ac.bd/faculty_profile/94/ahashan_habib_niloy" # BRAC CSE profile
 collection: teaching
 type: "Adjunct Lecturer"
 permalink: /teaching/2021-10-bracu-part-time-lecturer

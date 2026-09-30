@@ -1,5 +1,6 @@
 ---
 title: "Lecturer"
+title_url: "https://www.bracu.ac.bd/about/people/ahashan-habib-niloy" # BRAC University profile
 collection: teaching
 type: "Lecturer"
 permalink: /teaching/2023-01-bracu-lecturer

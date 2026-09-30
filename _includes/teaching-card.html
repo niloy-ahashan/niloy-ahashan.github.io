@@ -12,7 +12,7 @@
     {% elsif role.status %}
     <span class="edu-badge teach-badge--leave"><i class="fa-solid fa-plane-departure" aria-hidden="true"></i>{{ role.status }}</span>
     {% endif %}
-    <h3 class="edu-card__degree">{{ role.title }}</h3>
+    <h3 class="edu-card__degree">{% if role.title_url %}<a class="teach-title-link" href="{{ role.title_url }}">{{ role.title }}</a>{% else %}{{ role.title }}{% endif %}</h3>
     <span class="edu-card__school">{{ role.institution }}</span>
     <ul class="edu-meta">
       <li><i class="fa-solid fa-building-columns" aria-hidden="true"></i>{{ role.department }}</li>
