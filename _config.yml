@@ -160,7 +160,7 @@ social:
 # Analytics
 analytics:
   provider               :  "custom" # false (default), "google", "google-universal", "google-analytics-4", "custom"
-  goatcounter_code       :  # your GoatCounter code, e.g. "niloy" for niloy.goatcounter.com (empty = off)
+  goatcounter_code       :  "niloy" # dashboard: https://niloy.goatcounter.com (empty = off)
   google:
     tracking_id          :
 
