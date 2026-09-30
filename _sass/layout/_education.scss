@@ -825,6 +825,13 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   .pub-btn { font-size: 0.75em; }
 }
 
+/* the four-color ring around the shared model turns slowly */
+.home-ring {
+  transform-box: view-box;
+  transform-origin: 160px 120px;
+  animation: home-spin 18s linear infinite;
+}
+
 .home-pulse {
   transform-box: fill-box;
   transform-origin: center;
@@ -924,7 +931,7 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   overflow: hidden;
 
   @include breakpoint($medium) {
-    grid-template-columns: minmax(0, 1fr) 190px;
+    grid-template-columns: minmax(0, 1fr) 230px;
     align-items: center;
     gap: 1.2em;
     padding: 1.3em 1.5em 1.3em;
@@ -941,11 +948,11 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   order: -1;
   justify-self: center;
   width: 100%;
-  max-width: 150px;
+  max-width: 190px;
 
   @include breakpoint($medium) {
     order: 0;
-    max-width: 190px;
+    max-width: 230px;
     align-self: start;
   }
 }
