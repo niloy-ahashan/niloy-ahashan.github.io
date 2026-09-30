@@ -473,3 +473,48 @@ html[data-theme="dark"] .author__urls-wrapper .author__urls:after {
     padding-bottom: 3px;
   }
 }
+
+/* ==========================================================================
+   Sidebar breathing space (desktop)
+   ========================================================================== */
+
+@include breakpoint($large) {
+  /* even rhythm: name -> tags 14px, tags -> PhD box 16px */
+  .sidebar .author__bio {
+    margin-top: 16px;
+  }
+
+  /* a little more room between link rows */
+  .author__urls-wrapper .author__urls a {
+    margin-bottom: 5px;
+  }
+}
+
+@include breakpoint($large) {
+  /* long link labels wrap instead of being cut off in a narrow sidebar */
+  .author__urls-wrapper .author__urls li {
+    white-space: normal;
+  }
+
+  .author__urls-wrapper .author__urls a {
+    align-items: flex-start;
+    line-height: 1.35;
+
+    > i { margin-top: -0.1em; }
+  }
+}
+
+/* keep at least ~28px between the sidebar and the content cards; the
+   fixed sidebar and the centered content scale differently, so the gap
+   is only short in these width ranges */
+@media screen and (min-width: 1040px) and (max-width: 1199px) {
+  .sidebar { padding-right: 24px; }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1279px) {
+  .sidebar { padding-right: 40px; }
+}
+
+@media screen and (min-width: 1500px) {
+  .sidebar { padding-right: 18px; }
+}
