@@ -1,0 +1,51 @@
+---
+layout: archive
+---
+{% comment %} Page for a single paper, styled like the Publications cards, with the abstract shown open. {% endcomment %}
+{% include base_path %}
+{% case page.category %}
+  {% when "manuscripts" %}{% assign pub_type = "Journal Article" %}{% assign pub_mod = "journal" %}{% assign pub_icon = "fa-book-open" %}
+  {% when "conferences" %}{% assign pub_type = "Conference Paper" %}{% assign pub_mod = "conference" %}{% assign pub_icon = "fa-users" %}
+  {% else %}{% assign pub_type = "Publication" %}{% assign pub_mod = "journal" %}{% assign pub_icon = "fa-file-lines" %}
+{% endcase %}
+{% assign cite_text = page.citation | strip_html %}
+
+<div class="edu">
+  <p class="pubpage__back"><a href="{{ base_path }}/publications/"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>All publications</a></p>
+
+  <article class="edu-card pubpage is-open">
+    <div class="edu-card__logo">
+      {% if page.publisher_logo %}<img src="{{ base_path }}/images/logos/{{ page.publisher_logo }}" alt="" width="80" height="80">{% endif %}
+    </div>
+    <div class="edu-card__body">
+      <span class="edu-badge pub-badge--{{ pub_mod }}"><i class="fa-solid {{ pub_icon }}" aria-hidden="true"></i>{{ pub_type }}</span>
+      <h1 class="edu-card__degree pub-title pubpage__title">{{ page.title }}</h1>
+      <span class="edu-card__school pub-venue">{{ page.venue_short | default: page.venue }}</span>
+      <ul class="edu-meta">
+        <li><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>{{ page.date | date: "%B %Y" }}</li>
+        {% if page.authors %}<li class="pub-authors"><i class="fa-solid fa-user-group" aria-hidden="true"></i><span>{{ page.authors | replace: "Niloy, A.H.", "<strong>Niloy, A.H.</strong>" }}</span></li>{% endif %}
+      </ul>
+      {% if page.abstract %}
+      <div class="pub-abstract">
+        <div class="pub-abstract__inner">
+          <p class="pub-abstract__label"><i class="fa-solid fa-align-left" aria-hidden="true"></i>Abstract</p>
+          <p class="pub-abstract__text">{{ page.abstract }}</p>
+        </div>
+      </div>
+      {% endif %}
+      {% if page.citation %}
+      <div class="pubpage__cite">
+        <p class="pub-abstract__label"><i class="fa-solid fa-quote-left" aria-hidden="true"></i>Citation</p>
+        <p class="pubpage__cite-text">{{ page.citation }}</p>
+      </div>
+      {% endif %}
+      <div class="pub-actions">
+        {% if page.paperurl %}<a class="pub-btn pub-btn--primary" href="{{ page.paperurl }}"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>Read paper</a>{% endif %}
+        {% if page.citation %}<button type="button" class="pub-btn" data-cite="{{ cite_text }}"><i class="fa-solid fa-copy" aria-hidden="true"></i><span class="pub-btn__label">Copy citation</span><span class="pub-btn__done">Copied!</span></button>{% endif %}
+      </div>
+    </div>
+    {% if page.publisher_logo %}<img class="edu-card__mark" src="{{ base_path }}/images/logos/{{ page.publisher_logo }}" alt="" aria-hidden="true">{% endif %}
+  </article>
+</div>
+
+<script src="{{ base_path }}/assets/js/cards.js?v={{ site.time | date: '%s' }}" defer></script>

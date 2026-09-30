@@ -231,8 +231,7 @@ collections:
   research:
     output: false
   teaching:
-    output: true
-    permalink: /:collection/:path/
+    output: false # roles are shown as cards on /teaching/
   publications:
     output: true
     permalink: /:collection/:path/
@@ -272,10 +271,9 @@ defaults:
       path: ""
       type: publications
     values:
-      layout: single
+      layout: publication
       author_profile: true
-      share: true
-      comments: true
+      hide_title: true
 
 
 # Sass/SCSS

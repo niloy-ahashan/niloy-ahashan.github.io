@@ -1,0 +1,48 @@
+---
+layout: archive
+title: "Page Not Found"
+sitemap: false
+permalink: /404.html
+author_profile: true
+hide_title: true
+---
+
+{% include base_path %}
+
+<div class="edu">
+  <section class="edu-hero notfound">
+    <div class="edu-hero__text">
+      <p class="notfound__code">404</p>
+      <h1 class="edu-hero__subtitle">Page not found</h1>
+      <p class="edu-hero__intro">The page you're looking for doesn't exist or may have moved. Try one of these instead:</p>
+      <div class="home-cta notfound__links">
+        <a class="pub-btn pub-btn--primary" href="{{ base_path }}/"><i class="fa-solid fa-house" aria-hidden="true"></i>Home</a>
+        <a class="pub-btn" href="{{ base_path }}/education/"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>Education</a>
+        <a class="pub-btn" href="{{ base_path }}/research/"><i class="fa-solid fa-brain" aria-hidden="true"></i>Research</a>
+        <a class="pub-btn" href="{{ base_path }}/publications/"><i class="fa-solid fa-book-open" aria-hidden="true"></i>Publications</a>
+        <a class="pub-btn" href="{{ base_path }}/teaching/"><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>Teaching</a>
+      </div>
+    </div>
+    <div class="edu-hero__art notfound__art" aria-hidden="true">
+      <svg class="edu-hero__svg" viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" focusable="false">
+        <defs>
+          <radialGradient id="nf-halo" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#dbe7ff"/>
+            <stop offset="100%" stop-color="#dbe7ff" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="160" cy="120" r="110" fill="url(#nf-halo)"/>
+        <g class="edu-float">
+          <circle cx="146" cy="108" r="46" fill="#ffffff" stroke="#1f4fbf" stroke-width="10"/>
+          <path d="M180 142 L222 184" stroke="#0f2a6b" stroke-width="16" stroke-linecap="round"/>
+          <path d="M180 142 L222 184" stroke="#f2b632" stroke-width="5" stroke-linecap="round"/>
+          <text x="146" y="122" text-anchor="middle" font-family="Georgia, serif" font-size="40" font-weight="700" fill="#1f4fbf">?</text>
+        </g>
+        <g fill="#f2b632">
+          <path class="edu-spark" d="M70 60l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
+          <path class="edu-spark edu-spark--2" d="M252 70l2.2 6 6 2.2-6 2.2-2.2 6-2.2-6-6-2.2 6-2.2z"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+</div>

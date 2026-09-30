@@ -1426,3 +1426,59 @@ html[data-theme="dark"] .home-fun:hover strong { color: #ff6b9a; }
   -webkit-hyphens: auto;
           hyphens: auto;
 }
+
+/* 404 page */
+.notfound__code {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 3.2em;
+  font-weight: 700;
+  line-height: 1;
+  background: linear-gradient(90deg, #1f4fbf, #6d9bff, #f2b632);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+
+.notfound__links .pub-btn { font-size: 0.72em; }
+
+/* Single publication page */
+.pubpage__back {
+  margin: 0 0 0.8em;
+  font-size: 0.8em;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45em;
+    font-weight: 700;
+    color: var(--edu-accent);
+  }
+
+  a:hover i { transform: translateX(-3px); }
+  i { transition: transform 0.3s ease; }
+}
+
+.edu .pubpage__title {
+  margin: 0.45em 0 0.1em;
+  font-size: 1.15em;
+  line-height: 1.3;
+  color: var(--edu-ink);
+
+  @include breakpoint($medium) { font-size: 1.3em; }
+}
+
+.pubpage__cite {
+  margin-top: 0.2em;
+}
+
+.pubpage__cite-text {
+  margin: 0;
+  padding: 0.6em 0.9em;
+  border-radius: 12px;
+  background: var(--edu-tint);
+  font-size: 0.74em;
+  line-height: 1.6;
+  color: var(--edu-text);
+  overflow-wrap: anywhere;
+}
