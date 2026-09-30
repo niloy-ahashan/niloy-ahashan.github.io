@@ -931,9 +931,9 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
   overflow: hidden;
 
   @include breakpoint($medium) {
-    grid-template-columns: minmax(0, 1fr) 230px;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
     align-items: center;
-    gap: 1.2em;
+    gap: 1.5em;
     padding: 1.3em 1.5em 1.3em;
   }
 }
@@ -952,8 +952,8 @@ $edu-ease         : cubic-bezier(0.22, 1, 0.36, 1);
 
   @include breakpoint($medium) {
     order: 0;
-    max-width: 230px;
-    align-self: start;
+    max-width: 340px;
+    align-self: center;
   }
 }
 
